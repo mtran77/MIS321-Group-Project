@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('https://www.modernfurnishings.com/cdn/shop/articles/contemporary-interior-design-guide.jpg?v=1675356226');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('https://parents.sa.ua.edu/wp-content/uploads/sites/3/UA-pic-72dpi.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -46,4 +46,3 @@ nav ul li a {
 nav ul li a:hover {
     text-decoration: underline;
 }
-
