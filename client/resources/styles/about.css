@@ -14,16 +14,16 @@ header {
 .container {
     width: 80%;
     margin: 0 auto;
-    padding: 20px; /* Add padding for spacing */
+    padding: 20px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #ccc; /* Add a border at the bottom for separation */
+    border-bottom: 2px solid #ccc; 
 }
 
 h1 {
     margin: 0;
-    font-family: 'Arial', sans-serif; /* Change the font family for h1 */
+    font-family: 'Arial', sans-serif; 
 }
 
 nav ul {
@@ -40,9 +40,16 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-family: 'Arial', sans-serif; /* Change the font family for nav links */
+    font-family: 'Arial', sans-serif; 
 }
 
 nav ul li a:hover {
     text-decoration: underline;
+}
+
+p {
+    font-size: 2.0rem; 
+    line-height: 1.0; 
+    color: black; 
+    background-color: white;
 }

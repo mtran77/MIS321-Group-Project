@@ -14,16 +14,16 @@ header {
 .container {
     width: 80%;
     margin: 0 auto;
-    padding: 20px; /* Add padding for spacing */
+    padding: 20px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #ccc; /* Add a border at the bottom for separation */
+    border-bottom: 2px solid #ccc; 
 }
 
 h1 {
     margin: 0;
-    font-family: 'Arial', sans-serif; /* Change the font family for h1 */
+    font-family: 'Arial', sans-serif; 
 }
 
 nav ul {
@@ -40,10 +40,39 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-family: 'Arial', sans-serif; /* Change the font family for nav links */
+    font-family: 'Arial', sans-serif; 
 }
 
 nav ul li a:hover {
     text-decoration: underline;
+}
+
+.contact-section {
+    display: flex;
+    align-items: center;
+    margin-top: 50px; 
+}
+
+
+.contact-info {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.image-container {
+    flex: 1;
+    padding: 20px;
+    text-align: center; 
+}
+
+
+.image-container img {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba()
 }
 
