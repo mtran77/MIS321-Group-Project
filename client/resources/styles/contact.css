@@ -76,3 +76,14 @@ nav ul li a:hover {
     box-shadow: 0 0 10px rgba()
 }
 
+.logo img {
+    width: 100px; 
+    margin-right: 10px; 
+}
+
+h1
+{
+    margin: 0;
+    flex: 1;
+}
+
