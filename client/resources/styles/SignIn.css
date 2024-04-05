@@ -1,3 +1,66 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* navBar styling */
+/* reference to navBar https://www.w3schools.com/howto/howto_css_responsive_header.asp */
+.header {
+overflow: hidden;
+background-color: #f1f1f1;
+padding: 20px 10px;
+margin: 0px;
+}
+
+/* ^ elements of navbar */
+
+.header a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header a.logo {
+font-size: 25px;
+font-weight: bold;
+}
+
+.header {
+    background-color: brown;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+}
+.header-right {
+    float: right;
+  }
+
+/* end of navBar styling */
+
+/* ^ video styling*/
+ /* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+/* video end  */
+
+/* ^ login box styling */
 
 .column {
     float: left;
@@ -11,32 +74,57 @@
     }
 
 .blockbox {
-    border: 3px solid black;
+   color: rgb(55, 55, 55);
+    margin: 10px;
+    margin-top: 80px;
+    border: 3px solid brown;
     background-color: white;
-    border-radius: 10px;
-    width: 40vh;
+    opacity: 90%;
+
+    width: 35vh;
     height: 60vh;
-    text-align: center;
+    display: flex; 
+    flex-direction: column; /* arrange elements in a column */
+    /* justify-content: center; */ 
+    align-items: center; /* center horizontally */
 } 
+
+.blockbox h1{
+    margin: 20px auto;
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
 
 .button-container {
     margin: 10px;
+    margin-top: 5px;
     width: 100%;
     text-align: center;
     height: 50%;
+    
 }
 
 .button-container button {
     display: block;
-    margin: 5px auto; /* Adjust margin between buttons */
+    margin: 20px auto; 
     
-    width: 150px; /* Set the width of the button */
+    width: 150px; 
     height: 40px;
 
-    border-style: solid;
+ 
     font-size: 20px;
     background-color: white ;
     color: brown;
-    border-color: brown;
-    border-width: 3px;
+
+    border: 3px solid brown;
+    
+    transition: background-color 0.2s, color 0.2s;
 }
+
+.button-container button:hover {
+    background-color: brown;
+    color: white;
+    
+}
+
+
