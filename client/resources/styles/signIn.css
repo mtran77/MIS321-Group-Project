@@ -6,6 +6,7 @@ body {
 }
 
 header {
+    border-radius: 10px;
     background-color: #333;
     color: #fff;
     padding: 20px 0;
@@ -46,3 +47,4 @@ nav ul li a {
 nav ul li a:hover {
     text-decoration: underline;
 }
+
