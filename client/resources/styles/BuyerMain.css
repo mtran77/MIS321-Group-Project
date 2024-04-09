@@ -1,0 +1,131 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* navBar styling */
+/* reference to navBar https://www.w3schools.com/howto/howto_css_responsive_header.asp */
+.header {
+overflow: hidden;
+background-color: #f1f1f1;
+padding: 20px 10px;
+margin: 0px;
+}
+
+/* ^ elements of navbar */
+
+.header a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header a.logo {
+font-size: 25px;
+font-weight: bold;
+}
+
+.header {
+    background-color: brown;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+}
+.header-right {
+    float: right;
+  }
+
+/* end of navBar styling */
+
+/* ^ video styling*/
+ /* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+/* video end  */
+
+/* ^ login box styling */
+
+.column {
+    float: left;
+    width: 33%;
+    }
+
+
+.container-categories {
+    text-align: center; /* Center the content horizontally */
+}
+
+ul {
+    margin: 0;
+  
+    padding: 10px;
+    
+    padding-bottom: 0;
+    
+    list-style: none;
+    border-bottom: solid rgb(198, 85, 85);
+    border-width: 2px;
+    
+}
+
+  
+ul li {
+    display: inline-block; /* Display list items horizontally */
+    margin-right: 10px; /* Add some spacing between list items */
+}
+  
+li button {
+    height: 40px;
+    width: 80px;
+    background-color: white;
+    border: none;
+    
+    margin-bottom: 0;
+    transition-duration: 0.4s;
+}
+
+li button:hover {
+   cursor: pointer;
+   
+   width: 80px;
+   background-color: pink;
+   border: solid brown 2px;
+   border-radius: 2px;
+
+    
+
+
+   height: 43px;
+   border-bottom: 3px white;
+   
+
+}
+  
+
+/* ! get rid of bottom border so that button looks seamless */
+.activeCat {
+    height: 40px;
+    width: 80px;
+    background-color: pink;
+    border: solid brown 2px;
+    border-radius: 2px;
+    
+    border-bottom: 3px rgb(255, 255, 255);
+}
