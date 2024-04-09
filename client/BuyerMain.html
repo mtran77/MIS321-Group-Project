@@ -11,46 +11,44 @@
   <div class="header">
     <a href="#default" class="logo">Title Town Furniture</a>
     <div class="header-right">
-      <a class="active" href="#home">Home</a>
+      
       <a href="#contact">Contact</a>
       <a href="#about">About</a>
+      <a href="SignIn.html">Login</a>
+      
     </div>
   </div> 
 
   <!-- category navbar -->
-  <div class="container-categories">
+  <div id="container-categories">
       <ul>
-          <li><button >Living</button></li>
-          <li><button class="activeCat">Kitchen</button></li>
-          <li><button>Office</button></li>
-          <li><button>Bedroom</button></li>
-          <li><button>Bathroom</button></li>
+          <li><button onclick="setActive(); filterSelection('all')" class="btn activeCat">All</button></li>
+          <li><button onclick="setActive(); filterSelection('living')" class="btn">Living</button></li>
+          <li><button onclick="setActive(); filterSelection('kitchen')" class="btn">Kitchen</button></li>
+          <li><button onclick="setActive(); filterSelection('office')" class="btn">Office</button></li>
+          <li><button onclick="setActive(); filterSelection('bedroom')" class="btn">Bedroom</button></li>
+          <li><button onclick="setActive(); filterSelection('bathroom')" class="btn">Bathroom</button></li>
+          <li><button onclick="setActive(); filterSelection('outdoors')" class="btn">Outdoors</button></li>
+
       </ul>
   </div>
   
-
-
 </header>
 
-
+<!-- when the database is hooked up; get rid of already made div items -->
 <body>
- 
-
-
-<!-- this is the floating box for signing in and whatnot  -->
-  <div class="row">
-    <div class="column" >
-        <h2> </h2>
-      
-    </div>
-    <div class="column" >
-      <h2> </h2>
-   
-  </div>
-    <div class="column" >
-        <h2> </h2>
-    </div>
-  </div>
+<!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+<div class="container-listings">
+    <div class="filter office">Desk</div>
+    <div class="filter living office">Lamp</div>
+    <div class="filter outdoors">Lawn Chair</div>
+    <div class="filter kitchen">Blender</div>
+    <div class="filter bedroom">Bedframe</div>
+    <div class="filter bathroom">Bathmat</div>
+    <div class="filter bedroom">toilet</div>
+    <div class="filter living">couch</div>
+</div>
+    
 
 
 
@@ -63,6 +61,6 @@
 
 
 
-  <script src="./resources/scripts/index.js"></script>
+  <script src="./resources/scripts/BuyerMain.js"></script>
 </body>
 </html>

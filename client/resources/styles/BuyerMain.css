@@ -68,7 +68,7 @@ font-weight: bold;
     }
 
 
-.container-categories {
+#container-categories {
     text-align: center; /* Center the content horizontally */
 }
 
@@ -108,10 +108,6 @@ li button:hover {
    background-color: pink;
    border: solid brown 2px;
    border-radius: 2px;
-
-    
-
-
    height: 43px;
    border-bottom: 3px white;
    
@@ -129,3 +125,34 @@ li button:hover {
     
     border-bottom: 3px rgb(255, 255, 255);
 }
+
+/* ^ filtering divs  */
+.container-listings {
+    margin: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.filter {
+    float: left;
+    background-color: lightgrey;
+    color: #ffffff;
+    width: 150px;
+    line-height: 150px;
+    text-align: center;
+    margin: 5px;
+    display: none; 
+
+}
+  
+ /* class thats added to filter elements to display */
+.show {
+    display: block;
+}
+
+.filter:hover {
+    
+}
+
+
+
