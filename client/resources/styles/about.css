@@ -1,4 +1,5 @@
 body {
+    font-family: 'Arial', sans-serif; /* Set the desired font */
     background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('https://parents.sa.ua.edu/wp-content/uploads/sites/3/UA-pic-72dpi.jpg');
     background-size: cover;
     background-position: center;
@@ -23,7 +24,6 @@ header {
 
 h1 {
     margin: 0;
-    font-family: 'Arial', sans-serif; 
 }
 
 nav ul {
@@ -40,7 +40,6 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-family: 'Arial', sans-serif; 
 }
 
 nav ul li a:hover {

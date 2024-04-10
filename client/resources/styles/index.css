@@ -104,4 +104,9 @@ footer ul li {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for a raised effect */
 }
 
+body, .text-content, footer {
+    font-family: 'Arial', sans-serif;
+}
+
+
 
