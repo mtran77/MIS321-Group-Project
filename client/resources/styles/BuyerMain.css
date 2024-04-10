@@ -1,6 +1,7 @@
 body {
     margin: 0px;
     padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* navBar styling */
@@ -44,23 +45,8 @@ font-weight: bold;
 
 /* end of navBar styling */
 
-/* ^ video styling*/
- /* Style the video: 100% width and height to cover the entire window */
-#myVideo {
-    height: 100vh;
-    width: 100vw;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-}
 
-/* video end  */
 
-/* ^ login box styling */
 
 .column {
     float: left;
@@ -69,26 +55,22 @@ font-weight: bold;
 
 
 #container-categories {
-    text-align: center; /* Center the content horizontally */
+    text-align: center; 
 }
 
 ul {
     margin: 0;
-  
     padding: 10px;
-    
     padding-bottom: 0;
-    
     list-style: none;
     border-bottom: solid rgb(198, 85, 85);
     border-width: 2px;
     
 }
-
   
 ul li {
-    display: inline-block; /* Display list items horizontally */
-    margin-right: 10px; /* Add some spacing between list items */
+    display: inline-block; 
+    margin-right: 10px; 
 }
   
 li button {
@@ -114,7 +96,6 @@ li button:hover {
 
 }
   
-
 /* ! get rid of bottom border so that button looks seamless */
 .activeCat {
     height: 40px;

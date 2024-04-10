@@ -1,6 +1,8 @@
+/* ! change the font to something more modern, it gross :C */
 body {
     margin: 0px;
     padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* navBar styling */
@@ -42,11 +44,11 @@ font-weight: bold;
     float: right;
   }
 
-/* end of navBar styling */
 
 /* ^ video styling*/
  /* Style the video: 100% width and height to cover the entire window */
 #myVideo {
+    margin-top: 110px;
     height: 100vh;
     width: 100vw;
     object-fit: cover;
@@ -76,25 +78,25 @@ font-weight: bold;
 .blockbox {
    color: rgb(55, 55, 55);
     margin: 10px;
-    margin-top: 80px;
-    border: 3px solid brown;
+    margin-top: 110px;
+    
     background-color: white;
     opacity: 90%;
-    
 
+    border-radius: 3px;
     width: 35vh;
     height: 60vh;
     display: flex; 
     flex-direction: column; 
-   
     align-items: center; 
-    border-radius: 2px;
+    
 } 
 
+
 .blockbox h1{
-    margin: 20px auto;
+    margin: 40px auto;
     margin-bottom: 5px;
-    text-decoration: underline;
+   
 }
 
 .button-container {
@@ -113,20 +115,19 @@ font-weight: bold;
     
     width: 150px; 
     height: 40px;
-
  
     font-size: 20px;
-    background-color: white ;
-    color: brown;
-
-    border: 3px solid brown;
-    border-radius: 2px;
+    background-color: brown ;
+    color: white;
+    border: none;
+   
+    border-radius: 3px;
     
     transition: background-color 0.2s, color 0.2s;
 }
 
 .button-container button:hover {
-    background-color: brown;
+    background-color: rgb(111, 28, 28);
     color: white;
     
 }
