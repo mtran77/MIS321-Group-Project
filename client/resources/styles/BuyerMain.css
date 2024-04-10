@@ -27,8 +27,8 @@ margin: 0px;
 }
 
 .header a.logo {
-font-size: 25px;
-font-weight: bold;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .header {
@@ -42,11 +42,6 @@ font-weight: bold;
 .header-right {
     float: right;
   }
-
-/* end of navBar styling */
-
-
-
 
 .column {
     float: left;
@@ -70,7 +65,7 @@ ul {
   
 ul li {
     display: inline-block; 
-    margin-right: 10px; 
+     
 }
   
 li button {
@@ -92,8 +87,6 @@ li button:hover {
    border-radius: 2px;
    height: 43px;
    border-bottom: 3px white;
-   
-
 }
   
 /* ! get rid of bottom border so that button looks seamless */
@@ -109,9 +102,9 @@ li button:hover {
 
 /* ^ filtering divs  */
 .container-listings {
-    margin: 10px;
-    margin-left: 5%;
-    margin-right: 5%;
+  /* margin: 10px;
+    margin-right: 10px;
+    margin-left: 10px; */
 }
 
 .filter {
@@ -145,8 +138,6 @@ li button:hover {
     line-height: 150px;
     text-align: center;
     margin: 5px;
-
-   
 }
 
 /* ! need to make the transition duration different cause this doenst transition smoothly */
@@ -157,6 +148,5 @@ li button:hover {
     opacity: 3s;
     transition-duration: 1s;
 }
-
 
 
