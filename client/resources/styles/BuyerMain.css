@@ -7,32 +7,44 @@ body {
 /* navBar styling */
 /* reference to navBar https://www.w3schools.com/howto/howto_css_responsive_header.asp */
 .header {
-overflow: hidden;
-background-color: #f1f1f1;
-padding: 20px 10px;
-margin: 0px;
+    overflow: hidden;
+    background-color: #333;
+    padding: 10px;
+    padding-bottom: 20px;
+    margin: 0px;
+    display: flex; /* Add flex display */
+    justify-content: space-between; /* Align items horizontally */
+    align-items: center;
 }
 
-/* ^ elements of navbar */
-
 .header a {
-    float: left;
     color: white;
     text-align: center;
-    padding: 12px;
+    padding: 8px 12px;
     text-decoration: none;
     font-size: 18px;
     line-height: 25px;
     border-radius: 4px;
 }
 
-.header a.logo {
+.header h1{
     font-size: 25px;
     font-weight: bold;
+    color: white;
 }
 
-.header {
-    background-color: brown;
+.logo img {
+    padding: 0;
+    margin: 8px;
+    width: 325px; 
+    margin-bottom: 0;
+    
+}
+
+.header-right {
+    margin-top: 5px;
+    font-style: bold;
+    display: inline-block;
 }
 
 .logo {
@@ -42,6 +54,14 @@ margin: 0px;
 .header-right {
     float: right;
   }
+
+.logo img {
+    padding: 0;
+    margin: 8px;
+    width: 325px; 
+    margin-bottom: 0;
+    
+}
 
 .column {
     float: left;
@@ -54,38 +74,37 @@ margin: 0px;
 }
 
 ul {
+    font-size: 50%;
     margin: 0;
     padding: 10px;
     padding-bottom: 0;
     list-style: none;
-    border-bottom: solid rgb(198, 85, 85);
+    border-bottom: solid brown;
     border-width: 2px;
     
 }
   
 ul li {
     display: inline-block; 
-     
 }
   
 li button {
+    margin: 5px 5px;
     height: 40px;
     width: 80px;
     background-color: white;
     border: none;
-    
     margin-bottom: 0;
-    transition-duration: 0.4s;
 }
 
 li button:hover {
    cursor: pointer;
    
    width: 80px;
-   background-color: pink;
+
    border: solid brown 2px;
    border-radius: 2px;
-   height: 43px;
+   height: 41px;
    border-bottom: 3px white;
 }
   
@@ -93,7 +112,6 @@ li button:hover {
 .activeCat {
     height: 40px;
     width: 80px;
-    background-color: pink;
     border: solid brown 2px;
     border-radius: 2px;
     
@@ -212,3 +230,28 @@ li button:hover {
     margin: 0;
 }
 
+footer {
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    color: white; /* Change text color to white */
+    padding: 50px 0; 
+}
+
+footer ul {
+    padding: 0;
+    margin: 0;
+    border-bottom: none;
+}
+
+footer ul li {
+    display: inline; /* Display list items horizontally */
+    margin: 0 20px; /* Adjust the margin between list items */
+}
+
+footer ul li a {
+    text-decoration: none; /* Remove underline from anchor elements */
+    color: inherit; /* Inherit text color from parent */
+    font-size: 15px;
+}
