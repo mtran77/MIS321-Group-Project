@@ -61,6 +61,7 @@ p {
 
 .image-container img {
     max-width: 80%; /* Adjust the width of the images as needed */
+    border-radius: 10px; /* Rounded corners */
 }
 
 .text-content {
@@ -103,4 +104,5 @@ h1
     margin: 0;
     flex: 1;
 }
+
 
