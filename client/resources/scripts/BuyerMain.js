@@ -2,9 +2,7 @@
 function setActive(){
 //   reference link: https://www.w3schools.com/howto/howto_js_active_element.asp
     var btnContainer = document.getElementById("container-categories");
-
     var btns = btnContainer.getElementsByClassName("btn");
-
     for (var i = 0; i < btns.length; i++) {
         btns[i].addEventListener("click", function() {
             var current = document.getElementsByClassName("activeCat");

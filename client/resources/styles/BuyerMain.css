@@ -12,8 +12,8 @@ body {
     padding: 10px;
     padding-bottom: 20px;
     margin: 0px;
-    display: flex; /* Add flex display */
-    justify-content: space-between; /* Align items horizontally */
+    display: flex; 
+    justify-content: space-between; 
     align-items: center;
 }
 
@@ -44,7 +44,8 @@ body {
 .header-right {
     margin-top: 5px;
     font-style: bold;
-    display: inline-block;
+    display: flex; /* Change display to flex */
+    align-items: center; /* Align items vertically */
 }
 
 .logo {
@@ -53,20 +54,47 @@ body {
 }
 .header-right {
     float: right;
-  }
+}
+  
 
 .logo img {
     padding: 0;
     margin: 8px;
     width: 325px; 
-    margin-bottom: 0;
-    
+    margin-bottom: 0; 
 }
+
+.search input {
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 13px;
+    border: 1px solid grey;
+    float: left;
+    width: 50%;
+    background: #f1f1f1;
+    outline: none
+}
+
+.search button {
+    float: left;
+    padding: 10px;
+    background: brown;
+    color: white;
+    font-size: 13px;
+    border: 1px solid grey;
+    border-left: none; 
+    cursor: pointer;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+  }
 
 .column {
     float: left;
     width: 33%;
-    }
+}
 
 
 #container-categories {
@@ -95,16 +123,13 @@ li button {
     background-color: white;
     border: none;
     margin-bottom: 0;
+    font-size: 15px;
 }
 
 li button:hover {
    cursor: pointer;
-   
-   width: 80px;
-
    border: solid brown 2px;
    border-radius: 2px;
-   height: 41px;
    border-bottom: 3px white;
 }
   
@@ -119,12 +144,6 @@ li button:hover {
 }
 
 /* ^ filtering divs  */
-/* .container-listings {
-  margin: 10px;
-    margin-right: 10px;
-    margin-left: 10px;
-} */
-
 .filter {
     display: none; 
 }
@@ -138,15 +157,11 @@ li button:hover {
     position: absolute;
     top: 0px;
     left: 0px;
-
     display: none;
     float: left;
-
-    width: 88.8%;
+    width: 89%;
     height: 94.5%;
-    
     padding: 10px 12px;
-
     text-align: center;
     margin: 0;
 }
@@ -158,9 +173,22 @@ li button:hover {
     color: white ;
     opacity: .9;
     transition-duration: 1s;
+    font-style: bold;
+    font-size: 10px;
 }
 
-/* tutorial styling */
+.hidden h2{
+
+    float: left;
+    padding: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+
+
 #product1 {
     text-align: center; 
     margin-left: 9%; 
@@ -170,16 +198,17 @@ li button:hover {
 #product1 .pro-container {
     display: flex;
     justify-content: flex-start;
-    padding-top: 20px;
+    padding-top: 5px;
     flex-wrap: wrap;
+    margin-bottom: 10%;
+    margin-top: 2%;
 }
 
 #product1 .pro{
-
     position: relative;
-    width: 15%;
-    min-width: 150px;
-    padding: 10px 12px;
+    width: 12%;
+    min-width: 125px;
+    padding: 10px 15px;
     border: 1px solid grey;
     border-radius: 2px;
     cursor: pointer;
@@ -230,6 +259,9 @@ li button:hover {
     margin: 0;
 }
 
+
+
+/* ^ footer  */
 footer {
     border-radius: 10px;
     display: flex;
