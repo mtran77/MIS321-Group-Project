@@ -21,7 +21,7 @@
         <a href="SignIn.html">Signin</a>
         <form class="search">
           <input type="text" placeholder="Enter Zipcode" name="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
+          <button onclick="searchZip()" type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>
     </div> 
@@ -48,13 +48,15 @@
   <div class="pro-container">
 
     <!-- product listing -->
-    <div class="pro filter living">
+    <!-- class is for the category sorting, data-seller-id and data-zipcode can be found through document.querySelector('[data-seller-id="00000"]')
+      id is the unique id associated each listing -->
+    <div class="pro filter living" data-seller-id="000000" data-zipcode="35404" id="111111">
       <img src="./resources/videos/StockChair.png" alt="Delete this image">
       <div class="description">
         <span>seller</span>
         <h5>description/name of product</h5>
         <!-- * this is where a product rating would go but we dont have that -->
-        <div class="star">
+        <div >
           <p>condition</p>
         </div>
         <h4>$100</h4>
@@ -63,8 +65,8 @@
       <div class="hidden">
         <div class="itemInfo">
           <h2>Location: </h2>
-          <h2 class="location"> 12345</h2>
-          <h2>Description: </h2>
+          <h2 class="location">12345</h2>
+          <!-- <h2>Description: </h2> -->
           <h2 class="description">--------------------------- </h2>
           <h2>Contact: </h2>
           <h2 class="user">sName@crimson.ua.edu</h2>
@@ -78,7 +80,6 @@
 </section>
 
 <footer>
-     
     <ul>
         <li><a id="home-link" href="#">Home</a></li>
         <li><a id="about-link" href="about.html">About</a></li>

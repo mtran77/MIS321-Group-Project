@@ -6,6 +6,8 @@
     <title>Title Town Town | Login</title>
     <link rel="stylesheet" href="./resources/styles/SignIn.css">
     <link rel="stylesheet" href="./resources/styles/NavBar+Footer.css">
+    <link rel="stylesheet" href="./resources/styles/SellerSignin.css">
+
 </head>
 <header>
   <div class="header">
@@ -42,17 +44,31 @@
   <!-- ! location for buttons needs to change -->
   <div class="column" >
     <div class="blockbox">
-      <h1>Login As:</h1>
+      <h1>Welcome Back!</h1>
+      <label for="">Enter Log In Details Below</label>
       <div class="button-container">
-        <a href="SellerSignIn.html">Seller</a>
-        <a href="BuyerSignIn.html">Buyer</a>
+
+
+        
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        <button type="submit" onclick="SubmitLoginRequest()">Login</button>
+
+
+        <hr class="solid">
+        <h1 id="bottomH1">Need An Account?</h1>
+        <label> Signup Today!</label>
         <a href="SignUp.html">Sign Up</a>
+        <a href="SignIn.html">Return</a>
       </div>
     </div>
   </div>
 
 
   
-  <script src="./resources/scripts/index.js"></script>
+  <script src="./resources/scripts/SellerSignIn.js"></script>
 </body>
 </html>
