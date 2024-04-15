@@ -53,5 +53,12 @@ function RemoveClass(element, name) {
 }
 
 function searchZip (){
-  
+  // only show listings that have the matching Zipcode
+}
+
+//this changes the page BUT ALSO needs to send all the information associated with a listing over to the ContactSeller.html page 
+// the Listing Name should auto fill 
+// Seller Email could autofill to but that's out of the scope for us
+function BuyItemPage () {
+  window.location.href = "ContactSeller.html"; 
 }
