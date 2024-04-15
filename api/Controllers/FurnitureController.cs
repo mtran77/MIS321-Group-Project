@@ -13,6 +13,7 @@ namespace api.Controllers
     public class FurnitureController : ControllerBase
     {
         // GET: api/Furniture
+        [EnableCors("OpenPolicy")]
         [HttpGet]
         public IEnumerable<string> Get()
         {
@@ -20,6 +21,7 @@ namespace api.Controllers
         }
 
         // GET: api/Furniture/5
+        [EnableCors("OpenPolicy")]
         [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
         {
@@ -33,12 +35,14 @@ namespace api.Controllers
         }
 
         // PUT: api/Furniture/5
+        [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
-
+        
         // DELETE: api/Furniture/5
+        [EnableCors("OpenPolicy")]
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
