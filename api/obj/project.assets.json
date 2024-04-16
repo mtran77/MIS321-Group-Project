@@ -9883,19 +9883,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\trant\\.nuget\\packages\\": {}
+    "C:\\Users\\broml\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\trant\\OneDrive\\Desktop\\MIS321\\groupProject\\api\\api.csproj",
+      "projectUniqueName": "C:\\Users\\broml\\Documents\\mis321\\MIS321-Group-Project\\api\\api.csproj",
       "projectName": "api",
-      "projectPath": "C:\\Users\\trant\\OneDrive\\Desktop\\MIS321\\groupProject\\api\\api.csproj",
-      "packagesPath": "C:\\Users\\trant\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\trant\\OneDrive\\Desktop\\MIS321\\groupProject\\api\\obj\\",
+      "projectPath": "C:\\Users\\broml\\Documents\\mis321\\MIS321-Group-Project\\api\\api.csproj",
+      "packagesPath": "C:\\Users\\broml\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\broml\\Documents\\mis321\\MIS321-Group-Project\\api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\trant\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\broml\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
