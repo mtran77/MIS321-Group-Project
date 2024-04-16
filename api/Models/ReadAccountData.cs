@@ -1,10 +1,13 @@
+using api.Data;
+using MySql.Data.MySqlClient;
+
 namespace api.Models
 {
     public class ReadAccountData
     {
         public Account GetAccount(int Id)
         {
-            Database myConnection = new Database();
+            ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.Cs;
 
             using var con = new MySqlConnection(cs);
@@ -12,16 +15,16 @@ namespace api.Models
 
             string stm = "SELECT * FROM accounts WHERE seller_id = @seller_id";
             using var cmd = new MySqlCommand(stm, con);
-            cmd.Parameters.AddWithValue("@seller_id", SellerId);
+            cmd.Parameters.AddWithValue("@seller_id", Id);
             cmd.Prepare();
             using MySqlDataReader rdr = cmd.ExecuteReader();
 
             rdr.Read();
             con.Close();
-            return new Account(){SellerID = rdr.GetInt32(0), SellerEmail = rdr.GetString(1), SellerUsername = rdr.GetString(2), SellerPassword = rdr.GetString(3), SellerPassword = rdr.GetString(4)};
+            return new Account(){SellerID = rdr.GetInt32(0), SellerEmail = rdr.GetString(1), SellerUsername = rdr.GetString(2), SellerPassword = rdr.GetString(3), SellerLocation = rdr.GetString(4)};
         }
 
-        public List<Account> GetAllMovies()
+        public List<Account> GetAllAccounts()
         {
             ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.Cs;
@@ -36,7 +39,7 @@ namespace api.Models
             List<Account> allAccounts = new List<Account>();
 
             while(rdr.Read()){
-                allAccounts.Add(new Account(){SellerID = rdr.GetInt32(0), SellerEmail = rdr.GetString(1), SellerUsername = rdr.GetString(2), SellerPassword = rdr.GetString(3), SellerPassword = rdr.GetString(4)});
+                allAccounts.Add(new Account(){SellerID = rdr.GetInt32(0), SellerEmail = rdr.GetString(1), SellerUsername = rdr.GetString(2), SellerPassword = rdr.GetString(3), SellerLocation = rdr.GetString(4)});
             }
 
             con.Close();

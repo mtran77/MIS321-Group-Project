@@ -1,10 +1,14 @@
+using api.Data;
+using MySql.Data.MySqlClient;
+
 namespace api.Models
 {
     public class SaveAccount
     {
             public static void CreateAccountTable(){
-            Database myConnection = new Database();
-            using var con = new MySqlConnection(Database.GetPublicConnection());
+            ConnectionString myConnection = new ConnectionString();
+            string cs = myConnection.Cs;
+            using var con = new MySqlConnection(cs);
 
             con.Open();
 
@@ -19,7 +23,7 @@ namespace api.Models
             ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.Cs;
 
-            using var con = new MySqlConnection(Database.GetPublicConnection());
+            using var con = new MySqlConnection(cs);
             con.Open();
 
             string stm = @"INSERT INTO accounts(seller_username TEXT, seller_password TEXT, seller_location TEXT, admin TINYINT NOT NULL DEFAULT 0)";

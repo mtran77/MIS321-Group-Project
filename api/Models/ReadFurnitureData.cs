@@ -1,3 +1,4 @@
+using api.Data;
 using MySql.Data.MySqlClient;
 
 namespace api.Models
@@ -6,7 +7,7 @@ namespace api.Models
     {
         public Furniture GetFurniture(int Id)
         {
-            Database myConnection = new Database();
+            ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.Cs;
 
             using var con = new MySqlConnection(cs);
@@ -20,10 +21,10 @@ namespace api.Models
 
             rdr.Read();
             con.Close();
-            return new Furniture(){ItemID = rdr.GetInt32(0), ItemPrice = rdr.GetInt32(1), ItemColor = rdr.GetString(2), ItemCategory = rdr.GetString(3), ItemType = rdr.GetString(4)};
+            return new Furniture(){ItemID = rdr.GetInt32(0), ItemPrice = rdr.GetInt32(1), ItemColor = rdr.GetString(2), ItemCategory = rdr.GetString(3), ItemType = rdr.GetString(4), Sold = rdr.GetBoolean(5), Deleted = rdr.GetBoolean(6)};
         }
 
-        public List<Furniture> GetAllMovies()
+        public List<Furniture> GetAllFurniture()
         {
             ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.Cs;
@@ -38,7 +39,7 @@ namespace api.Models
             List<Furniture> allFurniture = new List<Furniture>();
 
             while(rdr.Read()){
-                allFurniture.Add(new Furniture(){ItemID = rdr.GetInt32(0), ItemPrice = rdr.GetInt32(1), ItemColor = rdr.GetString(2), ItemCategory = rdr.GetString(3), ItemType = rdr.Getstring(4)});
+                allFurniture.Add(new Furniture(){ItemID = rdr.GetInt32(0), ItemPrice = rdr.GetInt32(1), ItemColor = rdr.GetString(2), ItemCategory = rdr.GetString(3), ItemType = rdr.GetString(4)});
             }
 
             con.Close();

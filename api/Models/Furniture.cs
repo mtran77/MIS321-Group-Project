@@ -10,6 +10,8 @@ namespace api.Models
         public string ItemColor { get; set; }
         public string ItemCategory { get; set; }
         public string ItemType { get; set; }
+        public bool Sold { get; set; }
+        public bool Deleted { get; set; }
 
         public override string ToString()
         {
