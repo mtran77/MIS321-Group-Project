@@ -4,5 +4,6 @@ function SubmitLoginRequest() {
     // if credientals are incorrect need to display to user somehow 
 
     // once the credientals are correct then you need to manually change the 
-    // current page that the user is on to the SellerMainPage.html
+    // 
+    //  window.location.href = "SellerMain.html"; 
 }
