@@ -1,6 +1,3 @@
-#myVideo {
-    margin-top: 5%;
-}
 
 hr.solid {
     border-top: 3px solid #bbb;
@@ -45,18 +42,6 @@ input[type=text], input[type=password] {
 }
 
 .blockbox {
-    color: rgb(55, 55, 55);
-    margin: 10px;
-    margin-top: 80px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    background-color: white;
-    opacity: 90%;
-
-    width: 35vh;
-    height: 70vh;
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    border-radius: 5px;
+   height: 85vh;
  } 
  

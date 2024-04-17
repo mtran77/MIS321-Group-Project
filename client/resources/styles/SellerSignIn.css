@@ -49,7 +49,7 @@ input[type=text], input[type=password] {
     opacity: 90%;
 
     width: 35vh;
-    height: 70vh;
+    height: 90vh;
     display: flex; 
     flex-direction: column; 
     align-items: center; 

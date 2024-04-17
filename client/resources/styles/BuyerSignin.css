@@ -1,3 +1,7 @@
+.blockbox {
+    height: 85vh;
+}
+
 .button-container input {
     display: block;
     margin: 20px auto; 

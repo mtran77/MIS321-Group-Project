@@ -5,5 +5,5 @@ function SubmitLoginRequest() {
 
     // once the credientals are correct then you need to manually change the 
     // 
-    //  window.location.href = "SellerMain.html"; 
+     window.location.href = "SellerMain.html"; 
 }
