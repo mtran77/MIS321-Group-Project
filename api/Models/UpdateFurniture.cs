@@ -5,7 +5,8 @@ namespace api.Models
 {
     public class UpdateFurniture
     {
-            public static void MarkAsSold(int id){
+            public static void MarkAsSold(int id)
+            {
             ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.Cs;
 
@@ -21,13 +22,15 @@ namespace api.Models
             cmd.Prepare();
 
             cmd.ExecuteNonQuery();
-        }
+            }
 
-            public static void DeleteListing(int id){
+            public static void DeleteListing(int id)
+            {
             ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.Cs;
 
             using var con = new MySqlConnection(cs);
+
             con.Open();
 
             string stm = $@"UPDATE movies SET deleted = true WHERE id = @item_id;";
@@ -38,6 +41,6 @@ namespace api.Models
             cmd.Prepare();
 
             cmd.ExecuteNonQuery();
-        }
+            }
     }
 }

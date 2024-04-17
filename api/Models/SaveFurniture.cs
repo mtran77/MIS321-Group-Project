@@ -5,7 +5,8 @@ namespace api.Models
 {
     public class SaveFurniture
     {
-        public static void CreateFurnitureTable(){
+        public static void CreateFurnitureTable()
+        {
             ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.Cs;
             using var con = new MySqlConnection(cs);

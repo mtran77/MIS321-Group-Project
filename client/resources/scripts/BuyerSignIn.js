@@ -1,4 +1,5 @@
-function GetZipcode (){
+function GetZipcode ()
+{
     // gives the code the zipcode that will sort and only display listings with 
     // matching zipcode to the buyer
     var zipcode = document.getElementById("buyerZipcode").value;
@@ -18,3 +19,4 @@ function GetZipcode (){
             console.error('Fetch operation error:', error); //More error handling in console
         });
 }
+

@@ -1,8 +1,10 @@
-function SubmitLoginRequest() {
+function SubmitLoginRequest() 
+{
     var username = document.getElementsByName("username")[0].value;
     var password = document.getElementsByName("password")[0].value;
     
-    var data = {
+    var data = 
+    {
         username: username,
         password: password
     };
@@ -14,16 +16,26 @@ function SubmitLoginRequest() {
         },
         body: JSON.stringify(data)
     })
-    //Error Catching
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+    .then(response => 
+    {
+        if (!response.ok) 
+        {
+            throw new Error('Bad network response');
         }
-        window.location.href = "SellerMainPage.html";
+        return response.json();
     })
-    //Error Catching
-    .catch(error => {
+    .then(accountData => 
+    {
+        if (accountData.isAdmin) 
+        {
+            window.location.href = "adminMain.html"; 
+
+            window.location.href = "sellerMain.html"; 
+        }
+    })
+    .catch(error => 
+    {
         console.error('Error:', error);
-        alert("An error occurred. Please try again.");
+        alert("Check console for error");
     });
 }
