@@ -5,7 +5,7 @@ namespace api.Models
 {
     public class ReadFurnitureData
     {
-        public Furniture GetFurniture(int Id)
+        public Furniture GetFurniture(int id)
         {
             ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.Cs;
@@ -13,15 +13,15 @@ namespace api.Models
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = "SELECT * FROM furniture WHERE item_id = @item_id";
+            string stm = "SELECT * FROM Furniture WHERE id = @ItemID";
             using var cmd = new MySqlCommand(stm, con);
-            cmd.Parameters.AddWithValue("@item_id", Id);
+            cmd.Parameters.AddWithValue("@item_id", id);
             cmd.Prepare();
             using MySqlDataReader rdr = cmd.ExecuteReader();
 
             rdr.Read();
             con.Close();
-            return new Furniture(){ItemID = rdr.GetInt32(0), ItemPrice = rdr.GetInt32(1), ItemColor = rdr.GetString(2), ItemCategory = rdr.GetString(3), ItemType = rdr.GetString(4), Sold = rdr.GetBoolean(5), Deleted = rdr.GetBoolean(6)};
+            return new Furniture(){ItemID = rdr.GetInt32(0), ItemPrice = rdr.GetInt32(1), ItemCategory = rdr.GetString(2), Deleted = rdr.GetBoolean(3), SellerID = rdr.GetInt32(4)};
         }
 
         public List<Furniture> GetAllFurniture()
@@ -32,14 +32,14 @@ namespace api.Models
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = "SELECT * FROM furniture";
+            string stm = "SELECT * FROM Furniture";
             using var cmd = new MySqlCommand(stm, con);
             using MySqlDataReader rdr = cmd.ExecuteReader();
 
             List<Furniture> allFurniture = new List<Furniture>();
 
             while(rdr.Read()){
-                allFurniture.Add(new Furniture(){ItemID = rdr.GetInt32(0), ItemPrice = rdr.GetInt32(1), ItemColor = rdr.GetString(2), ItemCategory = rdr.GetString(3), ItemType = rdr.GetString(4)});
+                allFurniture.Add(new Furniture(){ItemID = rdr.GetInt32(0), ItemPrice = rdr.GetInt32(1), ItemCategory = rdr.GetString(2), Deleted = rdr.GetBoolean(3), FurnitureImage = rdr.GetString(4), SellerID = rdr.GetInt32(5)});
             }
 
             con.Close();

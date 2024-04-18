@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\broml\\Documents\\mis321\\mis321-group-project\\api\\api.csproj": {}
+    "C:\\Users\\broml\\Documents\\mis321\\MIS321-Group-Project\\api\\api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\broml\\Documents\\mis321\\mis321-group-project\\api\\api.csproj": {
+    "C:\\Users\\broml\\Documents\\mis321\\MIS321-Group-Project\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\broml\\Documents\\mis321\\mis321-group-project\\api\\api.csproj",
+        "projectUniqueName": "C:\\Users\\broml\\Documents\\mis321\\MIS321-Group-Project\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "C:\\Users\\broml\\Documents\\mis321\\mis321-group-project\\api\\api.csproj",
+        "projectPath": "C:\\Users\\broml\\Documents\\mis321\\MIS321-Group-Project\\api\\api.csproj",
         "packagesPath": "C:\\Users\\broml\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\broml\\Documents\\mis321\\mis321-group-project\\api\\obj\\",
+        "outputPath": "C:\\Users\\broml\\Documents\\mis321\\MIS321-Group-Project\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\broml\\AppData\\Roaming\\NuGet\\NuGet.Config"

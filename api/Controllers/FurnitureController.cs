@@ -40,7 +40,7 @@ namespace api.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
-            UpdateFurniture.MarkAsSold(id);
+            
         }
 
         // DELETE: api/Furniture/5

@@ -26,7 +26,14 @@ namespace api.Controllers
         public Account Get(int id)
         {
             ReadAccountData readObject = new ReadAccountData();
-            return readObject.GetAccount(id);
+            List<Account> myAccounts =  readObject.GetAllAccounts();
+            foreach(Account account in myAccounts){
+                if(account.SellerID == id){
+                    return account;
+                }
+            } return new Account();
+            // ReadAccountData readObject = new ReadAccountData();
+            // return readObject.GetAccount(id);
         }
 
         // POST: api/Account
