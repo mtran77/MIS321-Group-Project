@@ -1,0 +1,46 @@
+#product1 h1,p{
+   text-align: left;
+    color: #333;
+    margin-bottom: 5px;
+    
+}
+
+#product1 p {
+    margin-top: 5px;
+    opacity: 35%;
+}
+
+.itemInfo, .SellerButton {
+    display: inline-block; 
+    vertical-align: top; 
+}
+
+.SellerButtons button{
+    margin-top: 5%;
+    width: 30%; 
+    height: 30px;
+   
+    border: none;
+    text-decoration: none;
+    transition: 0.2s, color 0.2s;
+    border-radius: 2px;
+    
+}
+
+.EditListing {
+    background-color: brown ;
+    color: white;
+    
+}
+
+.DeleteListing {
+    background-color: rgb(238, 238, 238) ;
+    color: #333;
+}
+
+.SellerButtons button:hover {
+    background-color: rgb(115, 31, 31);
+    color: white;
+    cursor: pointer;
+}
+

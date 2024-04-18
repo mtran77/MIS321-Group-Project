@@ -1,76 +1,84 @@
 .floating-button{
-    width: 60px;
-    height: 60px;
-    background-color: brown;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    border-radius: 2px;
-    border: none;
-    color: white;
-    
-    font-size: 35px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, .25);
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-}
+  width: 60px;
+  height: 60px;
+  background-color: brown;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 2px;
+  border: none;
+  color: white;
+
+  font-size: 35px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .25);
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  }
 
 .floating-button:hover {
-    cursor: pointer;
-    background-color: rgb(115, 31, 31);
+
+  cursor: pointer;
+  background-color: rgb(115, 31, 31);
 }
 
 .form-popup {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    right: 15px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, .25);
-    z-index: 9;
-  }
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .25);
+  z-index: 9;
+}
   
-  /* Add styles to the form container */
-  .form-container {
-    max-width: 300px;
-    padding: 10px;
-    background-color: white;
-  }
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
   
-  /* Full-width input fields */
-  .form-container input[type=text], .form-container input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-  }
+
+.form-container input, .form-container select {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input{
+  width: 90%;
+}
+
+#myFile {
+  background-color: none;
+}
+
+
+.form-container .btn {
+  background-color: brown;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+
+}
   
-  /* When the inputs get focus, do something */
-  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-  }
+
+.form-container .cancel {
+  background-color: lightgrey;
+}
   
-  /* Set a style for the submit/login button */
-  .form-container .btn {
-    background-color: brown;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom:10px;
-    opacity: 0.8;
-  }
-  
-  /* Add a red background color to the cancel button */
-  .form-container .cancel {
-    background-color: lightgrey;
-  }
-  
-  /* Add some hover effects to buttons */
-  .form-container .btn:hover, .open-button:hover {
-    opacity: 1;
-  }
+
+.form-container .btn:hover{
+  background-color: rgb(115, 31, 31);
+}
+
+.form-container .cancel:hover {
+  background-color: rgb(163, 163, 163);
+  color: #333;
+}

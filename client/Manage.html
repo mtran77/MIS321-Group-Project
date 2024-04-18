@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="./resources/styles/BuyerMain.css">
     <link rel="stylesheet" href="./resources/styles/NavBar+Footer.css">
     <link rel="stylesheet" href="./resources/styles/SellerMain.css">
+    <link rel="stylesheet" href="./resources/styles/Manage.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 </head>
 <header>
   <!-- navBar -->
@@ -17,9 +20,9 @@
       </div>
       <div class="header-right">
         <!-- USERNAME  -->
-        <a>Welcome back, UserName</a> 
+        <a href="">Welcome back, UserName</a> 
         <a href="SellerMain.html">Home</a>
-        <a href="Manage.html">Manage</a>
+        <a href="">Manage</a>
         <a href="SignIn.html">Logout</a>
         
         <form class="search">
@@ -32,27 +35,26 @@
     <div class="container-addListings">
         <!-- button should be floating at the bottom right of the seller's screen and should open a form to add new listings -->
         <button onclick="openForm()" class="floating-button" title="Add New Listing">+</button>
-    </div>
-
+    
     <div class="form-popup" id="NewListingForm">
         <form action="/action_page.php" class="form-container">
-          <h1>New Listing</h1>
-      
-          <label for="ListingName"><b>Listing Name</b></label>
-          <input type="text" placeholder="Listing Name" name="LName" required>
-      
-          <label for="zip"><b>Location</b></label>
-          <input type="text" placeholder="Enter Listing Zipcode" name="zip" required>
-      
-          <label for="price"><b>Price</b></label>
-          <input type="text" placeholder="Enter Listing Price" name="price" required>
-          
-          <label for="Condition"><b>Condition</b></label>
+            <h1>New Listing</h1>
+        
+            <label for="ListingName"><b>Listing Name</b></label>
+            <input type="text" placeholder="Listing Name" name="LName" required>
+        
+            <label for="zip"><b>Location</b></label>
+            <input type="text" placeholder="Enter Listing Zipcode" name="zip" required>
+        
+            <label for="price"><b>Price</b></label>
+            <input type="text" placeholder="Enter Listing Price" name="price" required>
+
+            <label for="Condition"><b>Condition</b></label>
             <input type="text" placeholder="Enter Condition Of Item" name="condition" required>
 
-          <label for="zip"><b>Category</b></label>
-          
-          <br><select name="listingCategory" id="listingCategory">
+            <label for="zip"><b>Category</b></label>
+            
+            <br><select name="listingCategory" id="listingCategory">
             <option value="all">All</option>
             <option value="living">Living</option>
             <option value="kitchen">Kitchen</option>
@@ -60,20 +62,19 @@
             <option value="bedroom">Bedroom</option>
             <option value="bathroom">Bathroom</option>
             <option value="outdoors">Outdoors</option>
-          </select><br>
-          
-          <label for="description"><b>Description</b></label>
-          <input type="text" placeholder="Enter Listing Description (1-100)" name="description" maxlength="100" required>
-          
-          <label for="file" >Upload Image</label>
-          <input type="file" id="myFile" name="filename">
+            </select><br>
+            
+            <label for="description"><b>Description</b></label>
+            <input type="text" placeholder="Enter Listing Description (1-100)" name="description" maxlength="100" required>
+            
+            <label for="file" >Upload Image</label>
+            <input type="file" id="myFile" name="filename">
 
-          <!-- AddNewListing() is on SellerMain.js -->
-          <button type="submit" class="btn" onclick="AddNewListing()">Create Listing</button>
-          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            <!-- AddNewListing() is on SellerMain.js -->
+            <button type="submit" class="btn" onclick="AddNewListing()">Create Listing</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
-      </div>
-      
+    </div>
     
   <!-- category navbar -->
   <div id="container-categories">
@@ -93,6 +94,8 @@
 <body>
 
 <section id="product1">
+    <h1>Manage Your Listings</h1>
+    <p>Hover Over to Edit or Delete</p>
   <div class="pro-container">
 
     <!-- product listing -->
@@ -110,14 +113,19 @@
         <h4>$100</h4>
       </div>
       <!-- hover over div -->
-      <div class="hidden" onclick="BuyItemPage()">
+      <!-- THIS IS DIFFERENT, THE HIDDEN DIV NO LONGER HAS A ONCLICK -->
+      <div class="hidden" >
         <div class="itemInfo">
           <h2>Location: </h2>
           <h2 class="location">12345</h2>
           <h2>Description: </h2>
-          <h2 class="description">--------------------------- </h2>
+          <h2 class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
           <h2>Contact: </h2>
           <h2 class="user">sName@crimson.ua.edu</h2>
+        </div>
+        <div class="SellerButtons">
+            <button class="EditListing">Edit</button>
+            <button class="DeleteListing">Delete</button>
         </div>
       </div>
     </div> <!-- end of product div -->
@@ -134,10 +142,10 @@
         <li><a id="signIn-link" href="signIn.html">Sign In</a></li>
     </ul>
   </footer>
- 
+   <!-- remove BuyerMain.js at the end, using for testing, dont remove if something breaks :)  -->
   <script src="./resources/scripts/BuyerMain.js"></script>
+  <script src="./resources/scripts/Manage.js"></script>
   <script src="./resources/scripts/SellerMain.js"></script>
-
 
 </body>
 </html>

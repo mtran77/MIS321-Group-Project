@@ -82,14 +82,15 @@ li button:hover {
     transition-duration: 1s;
     font-style: bold;
     font-size: 10px;
+   
 }
 
 .hidden h2{
-
     float: left;
-    padding: 2px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    padding: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    
 }
 
 #product1 {
@@ -130,8 +131,8 @@ li button:hover {
 }
 
 #product1 .pro .description{
-    text-align: start;
-    padding: 10px 0;
+    text-align: left;
+    
 }
 
 #product1 .pro .description span{

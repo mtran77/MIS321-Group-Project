@@ -94,6 +94,10 @@ form.example::after {
     clear: both;
   }
 
+.search button {
+    border-radius: 2px;
+}
+
 /* ^ footer  */
 footer {
    

@@ -1,3 +1,3 @@
 function returnToBuyer() {
-    window.location.href = "BuyerMain.html"; 
+    window.history.back();
 }
