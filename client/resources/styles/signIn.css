@@ -1,0 +1,143 @@
+body {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('https://www.modernfurnishings.com/cdn/shop/articles/contemporary-interior-design-guide.jpg?v=1675356226');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header {
+    border-radius: 10px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ccc; 
+}
+
+h1 {
+    margin: 0;
+    font-family: 'Arial', sans-serif; 
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Arial', sans-serif; 
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Styles for the sign-in form */
+.main {
+    padding-top: 20px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+}
+
+form {
+    width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button[type="submit"],
+button.buyerSignInButton {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover,
+button.buyerSignInButton:hover {
+    background-color: #555;
+}
+
+/* Your CSS styles */
+
+/* Your CSS styles */
+
+.buyer-link a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.buyerSignInButton {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #333;
+    color: #fff; /* Change text color to match the button */
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px; /* Set the font size */
+}
+
+.buyerSignInButton:hover {
+    background-color: #555; /* Change color on hover */
+}
+
+.logo img {
+    width: 100px; 
+    margin-right: 10px; 
+}
+
+h1
+{
+    margin: 0;
+    flex: 1;
+}

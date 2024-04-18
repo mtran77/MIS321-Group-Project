@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using api.Models; 
+using api.Models;
+using Mysqlx.Crud;
 
 namespace api.Controllers
 {
@@ -14,34 +15,40 @@ namespace api.Controllers
     {
         // GET: api/Furniture
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<Furniture> Get()
         {
-            return new string[] { "value1", "value2" };
+            ReadFurnitureData readObject = new ReadFurnitureData();
+            return readObject.GetAllFurniture();
         }
 
         // GET: api/Furniture/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpGet("{id}", Name = "GetFurniture")]
+        public Furniture Get(int id)
         {
-            return "value";
+            ReadFurnitureData readObject = new ReadFurnitureData();
+            return readObject.GetFurniture(id);
         }
 
         // POST: api/Furniture
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Furniture furniture)
         {
+            SaveFurniture.CreateFurniture(furniture);
         }
 
         // PUT: api/Furniture/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
+            UpdateFurniture.MarkAsSold(id);
         }
 
         // DELETE: api/Furniture/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            UpdateFurniture.DeleteListing(id);
         }
     }
 }
+

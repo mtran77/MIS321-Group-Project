@@ -1,0 +1,108 @@
+body {
+    font-family: 'Arial', sans-serif; /* Set the desired font */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('https://parents.sa.ua.edu/wp-content/uploads/sites/3/UA-pic-72dpi.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ccc; 
+}
+
+h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+p {
+    font-size: 2.0rem; 
+    line-height: 1.0; 
+    color: black; 
+    background-color: white;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.image-container img {
+    max-width: 80%; /* Adjust the width of the images as needed */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.text-content {
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for a raised effect */
+}
+
+.text-content p {
+    font-size: 1.2rem; /* Adjust font size as needed */
+    line-height: 1.6; /* Adjust line height as needed */
+    color: black; 
+}
+
+.image-container .image2 img {
+    max-width: 100%; /* Adjust the width of image 2 */
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        flex-direction: column; /* Stack images and text vertically on smaller screens */
+    }
+
+    .image-container .image1,
+    .image-container .image2 {
+        width: 100%; /* Full width for each image container on smaller screens */
+        margin-bottom: 20px; /* Add space between image containers */
+    }
+}
+
+.logo img {
+    width: 100px; 
+    margin-right: 10px; 
+}
+
+h1
+{
+    margin: 0;
+    flex: 1;
+}
+
+
