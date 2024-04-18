@@ -11,6 +11,7 @@ namespace api.Models
         public bool Deleted { get; set; }
         public int SellerID { get; set; }
         public string FurnitureImage { get; set; }
+        public string ItemName { get; set; }
 
     }
 }

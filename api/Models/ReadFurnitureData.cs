@@ -21,7 +21,7 @@ namespace api.Models
 
             rdr.Read();
             con.Close();
-            return new Furniture(){ItemID = rdr.GetInt32(0), ItemPrice = rdr.GetInt32(1), ItemCategory = rdr.GetString(2), Deleted = rdr.GetBoolean(3), SellerID = rdr.GetInt32(4)};
+            return new Furniture(){ItemID = rdr.GetInt32(0), ItemPrice = rdr.GetInt32(1), ItemCategory = rdr.GetString(2), Deleted = rdr.GetBoolean(3), FurnitureImage = rdr.GetString(4), SellerID = rdr.GetInt32(5), ItemName = rdr.GetString(6)};
         }
 
         public List<Furniture> GetAllFurniture()
@@ -39,7 +39,7 @@ namespace api.Models
             List<Furniture> allFurniture = new List<Furniture>();
 
             while(rdr.Read()){
-                allFurniture.Add(new Furniture(){ItemID = rdr.GetInt32(0), ItemPrice = rdr.GetInt32(1), ItemCategory = rdr.GetString(2), Deleted = rdr.GetBoolean(3), FurnitureImage = rdr.GetString(4), SellerID = rdr.GetInt32(5)});
+                allFurniture.Add(new Furniture(){ItemID = rdr.GetInt32(0), ItemPrice = rdr.GetInt32(1), ItemCategory = rdr.GetString(2), Deleted = rdr.GetBoolean(3), FurnitureImage = rdr.GetString(4), SellerID = rdr.GetInt32(5), ItemName = rdr.GetString(6)});
             }
 
             con.Close();
