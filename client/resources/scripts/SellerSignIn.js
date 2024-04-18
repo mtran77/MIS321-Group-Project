@@ -31,6 +31,7 @@ function SubmitLoginRequest()
             window.location.href = "adminMain.html"; 
 
             window.location.href = "sellerMain.html"; 
+            WelcomeUsername(username);
         }
     })
     .catch(error => 
@@ -38,4 +39,9 @@ function SubmitLoginRequest()
         console.error('Error:', error);
         alert("Check console for error");
     });
+
+    function WelcomeUsername(username) 
+    {
+        document.getElementById("WelcomeUser").textContent = "Welcome back, " + username;
+    }
 }

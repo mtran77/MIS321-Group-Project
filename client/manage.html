@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title Town Furniture</title>
+    <link rel="stylesheet" href="./resources/styles/BuyerMain.css">
+    <link rel="stylesheet" href="./resources/styles/NavBar+Footer.css">
+    <link rel="stylesheet" href="./resources/styles/SellerMain.css">
+    <link rel="stylesheet" href="./resources/styles/Manage.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<header>
+  <!-- navBar -->
+    <div class="header">
+      <div class="logo">
+        <img src="./resources/videosAndImgs/TTTlogoWithText.png" alt="Contact Image">
+      </div>
+      <div class="header-right">
+        <!-- USERNAME  -->
+        <a id="WelcomeUser">Welcome back, UserName</a> 
+        <!-- Depending on if the user is an Admin or Not send them to their respective Main pages (SellerMain or AdminMain) -->
+        <a href="" onclick="ReturnToMain()">Home</a> 
+        <a href="Manage.html">Manage</a>
+        <a href="SignIn.html">Logout</a>
+        
+        <form class="search">
+          <input type="text" placeholder="Enter Zipcode" name="search">
+          <button onclick="searchZip()" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div> 
+    
+    <div class="container-addListings">
+        <!-- button should be floating at the bottom right of the seller's screen and should open a form to add new listings -->
+        <button onclick="openForm()" class="floating-button" title="Add New Listing">+</button>
+    
+        <div class="form-popup" id="NewListingForm">
+          <form action="/action_page.php" class="form-container">
+            <h1>New Listing</h1>
+        
+            <label for="ListingName"><b>Listing Name</b></label>
+            <input type="text" placeholder="Listing Name" name="LName" required>
+        
+            <label for="zip"><b>Location</b></label>
+            <input type="text" placeholder="Enter Listing Zipcode" name="zip" required>
+        
+            <label for="price"><b>Price</b></label>
+            <input type="text" placeholder="Enter Listing Price" name="price" required>
+  
+            <label for="Condition"><b>Condition</b></label>
+              <br><select name="listingCondition" id="listingCondition">
+                <option value="newCon">New</option>
+                <option value="veryGoodCon">Very Good</option>
+                <option value="goodCon">Good</option>
+                <option value="usedCon">Used</option>
+                <option value="acceptableCon">Acceptable</option>
+                <option value="damagedCon">Damaged</option>
+              </select><br>
+            <label for="zip"><b>Category</b></label>
+            
+            <br><select name="listingCategory" id="listingCategory">
+              <option value="all">All</option>
+              <option value="living">Living</option>
+              <option value="kitchen">Kitchen</option>
+              <option value="office">Office</option>
+              <option value="bedroom">Bedroom</option>
+              <option value="bathroom">Bathroom</option>
+              <option value="outdoors">Outdoors</option>
+            </select><br>
+            
+            <label for="description"><b>Description</b></label>
+            <input type="text" placeholder="Enter Listing Description (1-100)" name="description" maxlength="100" required>
+            
+            <label for="file" >Upload Image</label>
+            <input type="file" id="myFile" name="filename">
+  
+            <!-- AddNewListing() is on SellerMain.js -->
+            <button type="submit" class="btn" onclick="AddNewListing()">Create Listing</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          </form>
+        </div>
+    </div>
+  <!-- category navbar -->
+  <div id="container-categories">
+      <ul>
+          <li><button onclick="setActive(); filterSelection('all')" class="btn activeCat">All</button></li>
+          <li><button onclick="setActive(); filterSelection('living')" class="btn">Living</button></li>
+          <li><button onclick="setActive(); filterSelection('kitchen')" class="btn">Kitchen</button></li>
+          <li><button onclick="setActive(); filterSelection('office')" class="btn">Office</button></li>
+          <li><button onclick="setActive(); filterSelection('bedroom')" class="btn">Bedroom</button></li>
+          <li><button onclick="setActive(); filterSelection('bathroom')" class="btn">Bathroom</button></li>
+          <li><button onclick="setActive(); filterSelection('outdoors')" class="btn">Outdoors</button></li>
+      </ul>
+  </div>
+</header>
+
+<!-- when the database is hooked up; get rid of already made div items -->
+<body>
+
+<section id="product1">
+    <h1>Manage Your Listings</h1>
+    <p>Hover Over to Edit or Delete</p>
+  <div class="pro-container">
+
+    <!-- product listing -->
+    <!-- class is for the category sorting, data-seller-id and data-zipcode can be found through document.querySelector('[data-seller-id="00000"]')
+      id is the unique id associated each listing -->
+    <div class="pro filter living" data-seller-id="000000" data-zipcode="35404" id="111111">
+      <img src="./resources/videosAndImgs/StockChair.png" alt="Delete this image">
+      <div class="description">
+        <span>seller</span>
+        <h5>description/name of product</h5>
+        <!-- * this is where a product rating would go but we dont have that -->
+        <div >
+          <p>condition</p>
+        </div>
+        <h4>$100</h4>
+      </div>
+      <!-- hover over div -->
+      <!-- THIS IS DIFFERENT, THE HIDDEN DIV NO LONGER HAS A ONCLICK -->
+      <div class="hidden" >
+        <div class="itemInfo">
+          <h2>Location: </h2>
+          <h2 class="location">12345</h2>
+          <h2>Description: </h2>
+          <h2 class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+          <h2>Contact: </h2>
+          <h2 class="user">sName@crimson.ua.edu</h2>
+        </div>
+        <div class="SellerButtons">
+            <!-- id for the button should be the seller ID or whatever we are using to  -->
+            <!-- idenitfy that this listing belongs to this user -->
+            <button class="EditListing" id="000000">Edit</button>
+            <button class="DeleteListing" id="000000">Delete</button>
+        </div>
+      </div>
+    </div> <!-- end of product div -->
+      
+    
+  <!-- end of pro-container div  -->
+  </div> 
+</section>
+  <footer>
+    <ul>
+      <li><a href="SellerMain.html">Home</a></li>
+      <li><a id="about-link" href="about.html">About</a></li>
+      <li><a id="contact-link" href="contact.html">Contact</a></li>
+      <li><a href="Manage.html">Manage</a></li>
+      <li><a href="SignIn.html">Logout</a></li>   
+    </ul>
+  </footer>
+   <!-- remove BuyerMain.js at the end, using for testing, dont remove if something breaks :)  -->
+  <script src="./resources/scripts/BuyerMain.js"></script>
+  <script src="./resources/scripts/Manage.js"></script>
+  <script src="./resources/scripts/SellerMain.js"></script>
+
+</body>
+</html>
