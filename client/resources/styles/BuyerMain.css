@@ -28,26 +28,23 @@ li button {
     width: 80px;
     background-color: white;
     border: none;
-    margin-bottom: 0;
+    margin-bottom: -2px;
     font-size: 15px;
-    
+    border-bottom: 2px solid brown;
 }
 
 li button:hover {
    cursor: pointer;
+   background-color: rgb(231, 231, 231);
    border: solid brown 2px;
-   border-radius: 2px;
-   border-bottom: 3px white;
+   border-bottom: 3px solid brown;
+
+  
 }
   
-/* ! get rid of bottom border so that button looks seamless */
 .activeCat {
-    height: 40px;
-    width: 80px;
     border: solid brown 2px;
-    border-radius: 2px;
-    
-    border-bottom: 3px rgb(255, 255, 255);
+    border-bottom: 3px solid white;
 }
 
 /* ^ filtering divs  */

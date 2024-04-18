@@ -31,19 +31,24 @@
   box-shadow: 2px 2px 5px rgba(0, 0, 0, .25);
   z-index: 9;
 }
-  
+
 
 .form-container {
   max-width: 300px;
   padding: 10px;
   background-color: white;
 }
-  
+
+.form-container h1 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
 
 .form-container input, .form-container select {
+  outline: none;
   width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
+  padding: 10px;
+  margin: 5px 0 13px 0;
   border: none;
   background: #f1f1f1;
 }
@@ -65,7 +70,7 @@
   cursor: pointer;
   width: 100%;
   margin-bottom:10px;
-
+  
 }
   
 

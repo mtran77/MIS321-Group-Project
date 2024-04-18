@@ -17,7 +17,7 @@
       </div>
       <div class="header-right">
         <!-- USERNAME  -->
-        <a>Welcome back, UserName</a> 
+        <a id="WelcomeUser">Welcome back, UserName</a> 
         <a href="SellerMain.html">Home</a>
         <a href="Manage.html">Manage</a>
         <a href="SignIn.html">Logout</a>
@@ -30,11 +30,10 @@
     </div> 
     
     <div class="container-addListings">
-        <!-- button should be floating at the bottom right of the seller's screen and should open a form to add new listings -->
-        <button onclick="openForm()" class="floating-button" title="Add New Listing">+</button>
-    </div>
-
-    <div class="form-popup" id="NewListingForm">
+      <!-- button should be floating at the bottom right of the seller's screen and should open a form to add new listings -->
+      <button onclick="openForm()" class="floating-button" title="Add New Listing">+</button>
+  
+      <div class="form-popup" id="NewListingForm">
         <form action="/action_page.php" class="form-container">
           <h1>New Listing</h1>
       
@@ -48,8 +47,14 @@
           <input type="text" placeholder="Enter Listing Price" name="price" required>
 
           <label for="Condition"><b>Condition</b></label>
-            <input type="text" placeholder="Enter Condition Of Item" name="condition" required>
-
+            <br><select name="listingCondition" id="listingCondition">
+              <option value="newCon">New</option>
+              <option value="veryGoodCon">Very Good</option>
+              <option value="goodCon">Good</option>
+              <option value="usedCon">Used</option>
+              <option value="acceptableCon">Acceptable</option>
+              <option value="damagedCon">Damaged</option>
+            </select><br>
           <label for="zip"><b>Category</b></label>
           
           <br><select name="listingCategory" id="listingCategory">
@@ -73,6 +78,7 @@
           <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
       </div>
+  </div>
       
     
   <!-- category navbar -->

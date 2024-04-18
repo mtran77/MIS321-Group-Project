@@ -1,3 +1,3 @@
-function returnToBuyer() {
+function returnToPrevious() {
     window.history.back();
 }

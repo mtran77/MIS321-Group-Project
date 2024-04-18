@@ -20,9 +20,10 @@
       </div>
       <div class="header-right">
         <!-- USERNAME  -->
-        <a href="">Welcome back, UserName</a> 
-        <a href="SellerMain.html">Home</a>
-        <a href="">Manage</a>
+        <a id="WelcomeUser">Welcome back, UserName</a> 
+        <!-- Depending on if the user is an Admin or Not send them to their respective Main pages (SellerMain or AdminMain) -->
+        <a href="" onclick="ReturnToMain()">Home</a> 
+        <a href="Manage.html">Manage</a>
         <a href="SignIn.html">Logout</a>
         
         <form class="search">
@@ -36,8 +37,8 @@
         <!-- button should be floating at the bottom right of the seller's screen and should open a form to add new listings -->
         <button onclick="openForm()" class="floating-button" title="Add New Listing">+</button>
     
-    <div class="form-popup" id="NewListingForm">
-        <form action="/action_page.php" class="form-container">
+        <div class="form-popup" id="NewListingForm">
+          <form action="/action_page.php" class="form-container">
             <h1>New Listing</h1>
         
             <label for="ListingName"><b>Listing Name</b></label>
@@ -48,20 +49,26 @@
         
             <label for="price"><b>Price</b></label>
             <input type="text" placeholder="Enter Listing Price" name="price" required>
-
+  
             <label for="Condition"><b>Condition</b></label>
-            <input type="text" placeholder="Enter Condition Of Item" name="condition" required>
-
+              <br><select name="listingCondition" id="listingCondition">
+                <option value="newCon">New</option>
+                <option value="veryGoodCon">Very Good</option>
+                <option value="goodCon">Good</option>
+                <option value="usedCon">Used</option>
+                <option value="acceptableCon">Acceptable</option>
+                <option value="damagedCon">Damaged</option>
+              </select><br>
             <label for="zip"><b>Category</b></label>
             
             <br><select name="listingCategory" id="listingCategory">
-            <option value="all">All</option>
-            <option value="living">Living</option>
-            <option value="kitchen">Kitchen</option>
-            <option value="office">Office</option>
-            <option value="bedroom">Bedroom</option>
-            <option value="bathroom">Bathroom</option>
-            <option value="outdoors">Outdoors</option>
+              <option value="all">All</option>
+              <option value="living">Living</option>
+              <option value="kitchen">Kitchen</option>
+              <option value="office">Office</option>
+              <option value="bedroom">Bedroom</option>
+              <option value="bathroom">Bathroom</option>
+              <option value="outdoors">Outdoors</option>
             </select><br>
             
             <label for="description"><b>Description</b></label>
@@ -69,13 +76,13 @@
             
             <label for="file" >Upload Image</label>
             <input type="file" id="myFile" name="filename">
-
+  
             <!-- AddNewListing() is on SellerMain.js -->
             <button type="submit" class="btn" onclick="AddNewListing()">Create Listing</button>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
+          </form>
+        </div>
     </div>
-    
   <!-- category navbar -->
   <div id="container-categories">
       <ul>
