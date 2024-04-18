@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\trant\\OneDrive\\Desktop\\MIS321\\groupProject\\api\\api.csproj": {}
+    "C:\\Users\\adamk\\Documents\\MIS CODES\\MIS321-Group-Project\\api\\api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\trant\\OneDrive\\Desktop\\MIS321\\groupProject\\api\\api.csproj": {
+    "C:\\Users\\adamk\\Documents\\MIS CODES\\MIS321-Group-Project\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\trant\\OneDrive\\Desktop\\MIS321\\groupProject\\api\\api.csproj",
+        "projectUniqueName": "C:\\Users\\adamk\\Documents\\MIS CODES\\MIS321-Group-Project\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "C:\\Users\\trant\\OneDrive\\Desktop\\MIS321\\groupProject\\api\\api.csproj",
-        "packagesPath": "C:\\Users\\trant\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\trant\\OneDrive\\Desktop\\MIS321\\groupProject\\api\\obj\\",
+        "projectPath": "C:\\Users\\adamk\\Documents\\MIS CODES\\MIS321-Group-Project\\api\\api.csproj",
+        "packagesPath": "C:\\Users\\adamk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adamk\\Documents\\MIS CODES\\MIS321-Group-Project\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\trant\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\adamk\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -74,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
