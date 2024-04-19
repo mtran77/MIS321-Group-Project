@@ -88,3 +88,11 @@ table button:hover {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* for allCategories */
+#product1 .pro {
+    border: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 5%;
+}
