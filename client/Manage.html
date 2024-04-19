@@ -58,8 +58,8 @@
                 <option value="acceptableCon">Acceptable</option>
                 <option value="damagedCon">Damaged</option>
               </select><br>
+
             <label for="zip"><b>Category</b></label>
-            
             <br><select name="listingCategory" id="listingCategory">
               <option value="all">All</option>
               <option value="living">Living</option>
@@ -73,9 +73,8 @@
             <label for="description"><b>Description</b></label>
             <input type="text" placeholder="Enter Listing Description (1-100)" name="description" maxlength="100" required>
             
-            <label for="file" ><b>Upload Image</b></label>
-            <input type="file" id="myFile" name="filename">
-  
+            <label for="file" ><b>Upload Image URL</b></label>
+            <input type="text" id="imageUrl" name="imageUrl" placeholder="Enter image URL">  
             <!-- AddNewListing() is on SellerMain.js -->
             <button type="submit" class="btn" onclick="AddNewListing()">Create Listing</button>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
