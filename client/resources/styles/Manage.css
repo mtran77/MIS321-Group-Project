@@ -2,7 +2,6 @@
    text-align: left;
     color: #333;
     margin-bottom: 5px;
-    
 }
 
 #product1 p {
@@ -24,7 +23,6 @@
     text-decoration: none;
     transition: 0.2s, color 0.2s;
     border-radius: 2px;
-    
 }
 
 .EditListing {
@@ -47,3 +45,54 @@
 #product1 .pro-container {
     margin-top: 0;
   }
+
+.modal {
+  display: none;
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  opacity: 1;
+ 
+}
+
+.modal-content {
+    color: #333;
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 439px;
+    position: absolute;
+    top: 47.3%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-content img{
+    width: 40%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
