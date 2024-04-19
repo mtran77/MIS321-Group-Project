@@ -13,7 +13,7 @@ namespace api.Models
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = $@"UPDATE Furniture SET Deleted = true WHERE id = @ItemID;";
+            string stm = $@"UPDATE Furniture SET Deleted = true WHERE ItemID = @ItemID;";
 
             using var cmd = new MySqlCommand(stm, con);
 

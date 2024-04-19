@@ -13,7 +13,7 @@ namespace api.Models
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = @"INSERT INTO Furniture(ItemPrice, ItemCategory, Deleted, FurnitureImage, SellerID, ItemName) VALUES(@ItemPrice, @ItemCategory, @Deleted, @FurnitureImage, @SellerID, @ItemName)";
+            string stm = @"INSERT INTO Furniture(ItemPrice, ItemCategory, Deleted, FurnitureImage, SellerID, ItemName, ItemCondition, ItemDescription) VALUES(@ItemPrice, @ItemCategory, @Deleted, @FurnitureImage, @SellerID, @ItemName, @ItemCondition, @ItemDescription)";
 
             using var cmd = new MySqlCommand(stm, con);
 
@@ -23,6 +23,8 @@ namespace api.Models
             cmd.Parameters.AddWithValue("@FurnitureImage", myFurniture.FurnitureImage);
             cmd.Parameters.AddWithValue("@SellerID", myFurniture.SellerID);
             cmd.Parameters.AddWithValue("@ItemName", myFurniture.ItemName);
+            cmd.Parameters.AddWithValue("@ItemCondition", myFurniture.ItemCondition);
+            cmd.Parameters.AddWithValue("@ItemDescription", myFurniture.SellerLocation);
 
             cmd.Prepare();
             

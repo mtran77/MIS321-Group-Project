@@ -26,7 +26,12 @@ namespace api.Controllers
         public Furniture Get(int id)
         {
             ReadFurnitureData readObject = new ReadFurnitureData();
-            return readObject.GetFurniture(id);
+            List<Furniture> myFurniture =  readObject.GetAllFurniture();
+            foreach(Furniture furniture in myFurniture){
+                if(furniture.ItemID == id){
+                    return furniture;
+                }
+            } return new Furniture();
         }
 
         // POST: api/Furniture

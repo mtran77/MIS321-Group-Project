@@ -12,6 +12,8 @@ namespace api.Models
         public int SellerID { get; set; }
         public string FurnitureImage { get; set; }
         public string ItemName { get; set; }
-
+        public string SellerLocation { get; set; }
+        public string ItemCondition { get; set; }
+        public string ItemDescription { get; set; }
     }
 }
