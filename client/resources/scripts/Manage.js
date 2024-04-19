@@ -1,20 +1,11 @@
-function DisplayDescription() {
-    var modal = document.getElementById("editingModal 000000");
-    var span = document.getElementsByClassName("close")[0];
+function DisplayEditingForm() {
+    document.getElementById("EditListingForm").style.display = "block";
+}
 
-    if (modal && span) {
-        modal.style.display = "block";
+function closeEditingForm() {
+    document.getElementById("EditListingForm").style.display = "none";
+  }
 
-        span.onclick = function() {
-        modal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    } else {
-        console.error("Modal or close button element not found.");
-    }
+function SaveListingEdits(){
+    // you know what to do 
 }

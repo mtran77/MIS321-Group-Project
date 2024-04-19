@@ -61,7 +61,6 @@
   background-color: none;
 }
 
-
 .form-container .btn {
   background-color: brown;
   color: white;
@@ -70,10 +69,8 @@
   cursor: pointer;
   width: 100%;
   margin-bottom:10px;
-  
 }
   
-
 .form-container .cancel {
   background-color: lightgrey;
 }

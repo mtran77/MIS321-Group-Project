@@ -46,53 +46,143 @@
     margin-top: 0;
   }
 
-.modal {
-  display: none;
-  position: fixed; 
-  z-index: 1; 
-  padding-top: 100px; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  opacity: 1;
- 
-}
 
-.modal-content {
-    color: #333;
-    background-color: white;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    height: 439px;
-    position: absolute;
-    top: 47.3%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.modal-content img{
-    width: 40%;
-}
-
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+.row {
+    display: flex;
 }
 
 .column {
-    float: left;
-    width: 50%;
+    flex: 50%; 
+    padding: 10px;
+    box-sizing: border-box; 
+}
+
+/* add new listing form */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .25);
+  z-index: 9;
+}
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+.form-container h1 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.form-container input, .form-container select {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 13px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input{
+  width: 90%;
+}
+
+#myFile {
+  background-color: none;
+}
+
+
+.form-container .btn {
+  background-color: brown;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+}
+  
+.form-container .cancel {
+  background-color: lightgrey;
+}
+  
+
+.form-container .btn:hover{
+  background-color: rgb(115, 31, 31);
+}
+
+.form-container .cancel:hover {
+  background-color: rgb(163, 163, 163);
+  color: #333;
+}
+
+/* *editing form */
+.editingForm-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .25);
+    z-index: 9;
+    }
+
+.editingForm-container{
+    max-width: 800px;
+    padding: 10px;
+    background-color: white;
+}
+
+.editingForm-container h1 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.editingForm-container input, .editingForm-container select {
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 13px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+.editingForm-container input{
+    width: 90%;
+}
+
+.editingForm-container .btn {
+    background-color: brown;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+}
+  
+.editingForm-container .cancel {
+    background-color: lightgrey;
+}
+  
+
+.editingForm-container .btn:hover{
+    background-color: rgb(115, 31, 31);
+}
+
+.editingForm-container.cancel:hover {
+    background-color: rgb(163, 163, 163);
+    color: #333;
+}
+
+#currentListingImg{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .25);
+}
+
+.editH1 {
+    margin-left: 2%;
 }
