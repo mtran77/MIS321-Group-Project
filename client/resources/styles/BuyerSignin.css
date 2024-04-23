@@ -1,0 +1,42 @@
+.blockbox {
+    height: 75vh;
+}
+
+.button-container input {
+    display: block;
+    margin: 20px auto; 
+    
+    width: 150px; 
+    height: 40px;
+    font-size: 15px;
+
+    text-decoration: none;
+    line-height: 40px; 
+    outline: none;
+    border: solid rgb(190, 190, 190) 2px;
+}
+
+.button-container label{
+    display: block;
+    margin: 20px auto; 
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.button-container a:hover {
+    background-color: rgb(115, 31, 31);
+    color: white;
+    cursor: pointer;
+}
+
+hr.solid {
+    border-top: 3px solid #bbb;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 40px;
+}
+
+#bottomH1 {
+    margin-top: 30px;
+}
+

@@ -1,0 +1,165 @@
+.column {
+    float: left;
+    width: 33%;
+}
+
+#container-categories {
+    text-align: center; 
+}
+
+ul {
+    font-size: 50%;
+    margin: 0;
+    padding: 10px;
+    padding-bottom: 0;
+    list-style: none;
+    border-bottom: solid brown;
+    border-width: 2px;
+    
+}
+  
+ul li {
+    display: inline-block; 
+}
+  
+li button {
+    margin: 5px 5px;
+    height: 40px;
+    width: 80px;
+    background-color: white;
+    border: none;
+    margin-bottom: -2px;
+    font-size: 15px;
+    border-bottom: 2px solid brown;
+}
+
+li button:hover {
+   cursor: pointer;
+   background-color: rgb(231, 231, 231);
+   border: solid brown 2px;
+   border-bottom: 3px solid brown;
+
+  
+}
+  
+.activeCat {
+    border: solid brown 2px;
+    border-bottom: 3px solid white;
+}
+
+/* ^ filtering divs  */
+.filter {
+    display: none; 
+}
+  
+ /* class thats added to filter elements to display */
+.show {
+    display: block;
+}
+
+.hidden {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+    float: left;
+    width: 89%;
+    height: 94.5%;
+    padding: 10px 12px;
+    text-align: center;
+    margin: 0;
+}
+
+/* ! need to make the transition duration different cause this doenst transition smoothly */
+.filter:hover .hidden {
+    display: block;
+    background-color: grey; 
+    color: white ;
+    opacity: .9;
+    transition-duration: 1s;
+    font-style: bold;
+    font-size: 10px;
+   
+}
+
+.hidden h2{
+    float: left;
+    padding: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    
+}
+
+#product1 {
+    text-align: center; 
+    margin-left: 9%; 
+    margin-right: 9%;  
+}
+
+#product1 .pro-container {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 5px;
+    flex-wrap: wrap;
+    margin-bottom: 10%;
+    margin-top: 2%;
+}
+
+#product1 .pro{
+    position: relative;
+    width: 12%;
+    min-width: 125px;
+    padding: 10px 15px;
+    border: 1px solid grey;
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 15px ;
+    transition: 0.2s ease;
+}
+
+#product1 .pro:hover{
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+#product1 .pro img{
+    width: 100%;
+    border-radius: 2px;
+}
+
+#product1 .pro .description{
+    text-align: left;
+    
+}
+
+#product1 .pro .description span{
+   color: lightgrey;
+   font-size: 12px;
+}
+
+#product1 .pro .description h5{
+    padding-top: 7px;
+    color: brown;
+    font-size: 14px;
+    margin: 0px;
+}
+
+/* where ratings wouldgo but we only have p tag */
+#product1 .pro .description p{
+    padding-top: 7px;
+    color: brown;
+    font-size: 13px;
+    margin: 0px;
+}
+
+#product1 .pro .description h4{
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: brown;
+    margin: 0;
+}
+
+#product1 .user {
+    font-size: 13px;
+}
