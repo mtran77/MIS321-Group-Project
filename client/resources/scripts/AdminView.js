@@ -28,7 +28,7 @@ function DisplayImage() {
     // getElementByID(descriptionModel 000000) 
     //should get the description id + listing id / whatever identifies listing that was passed in from the parameter
     var modal = document.getElementById("imageModal 000000");
-    var span = document.getElementsByClassName("close")[0];
+    var span = document.getElementsByClassName("close1")[0];
 
   
     if (modal && span) {
