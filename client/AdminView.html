@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title Town Furniture</title>
+    <link rel="stylesheet" href="./resources/styles/BuyerMain.css">
+    <link rel="stylesheet" href="./resources/styles/NavBar+Footer.css">
+    <link rel="stylesheet" href="./resources/styles/SellerMain.css">
+    <link rel="stylesheet" href="./resources/styles/AdminView.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<header>
+  <!-- navBar -->
+    <div class="header">
+      <div class="logo">
+        <img src="./resources/videosAndImgs/TTTlogoWithText.png" alt="Contact Image">
+      </div>
+      <div class="header-right">
+        <!-- USERNAME  -->
+        <a id="WelcomeUser">Welcome back, UserName</a> 
+        <a href="AdminMain.html">Home</a>
+        <a href="Manage.html">Manage</a>
+        <a href="Manage.html">Admin</a>
+        <a href="SignIn.html">Logout</a>
+        
+        <form class="search">
+          <input type="text" placeholder="Enter Zipcode" name="search">
+          <button onclick="searchZip()" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div> 
+    
+  <!-- category navbar -->
+  <div id="container-categories">
+      <ul>
+          <li><button onclick="setActive(); filterSelection('AllListings')" class="btn activeCat">All Listings</button></li>
+          <!-- <li><button onclick="setActive(); filterSelection('AllCategories')" class="btn">All Categories</button></li> -->
+      </ul>
+  </div>
+</header>
+
+<!-- when the database is hooked up; get rid of already made div items -->
+<body>
+    <section id="product1">
+    <div class="pro-container">
+        <div class=" filter AllListings" data-seller-id="000000" data-zipcode="35404" id="111111">
+            <!-- Listings should be generated and placed in element id DisplayAllListings -->
+            <div class="DisplayAllListings">
+                <table>
+                    <tr>
+                        <th>ItemID</th>
+                        <th>Username</th>
+                        <th>Contact</th>
+                        <th>Location</th>
+                        <th>Listing Name</th>
+                        <th>Category</th>
+                        <th>Condition</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>View Image</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr>
+                        <td id="idtemIdCell">12312321354132</td>
+                        <td id="usernameCell">12312321354132</td>
+                        <td id="contactCell">sName@crimson.ua.edu</td>
+                        <td id="locationCell">35404</td>
+                        <td id="listingNameCell">Ikea Alex Drawers</td>
+                        <td id="categoryCell">Office</td>
+                        <td id="conditionCell">Very Good</td>
+                        <td id="priceCell">$30</td>
+                        <!-- hovering classes should pass the listing identifying ids in their functions when clicked!! -->
+                        <td class="hoverInformation" id="descriptionCell" onclick="DisplayDescription()">Description</td>
+                        <td class="hoverInformation" id="imageCell" onclick="DisplayImage()">Image</td>
+                        <td><button class="deleteBtn">Delete</button></td> 
+                        <!-- for description -->
+                        <div id="descriptionModal 000000" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <!-- this should have the description of the Listing!  -->
+                                <p id="descriptionCell">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+
+                        <!-- for displaying image -->
+                        <div id="imageModal 000000" class="modal">                   
+                            <div class="modal-content">
+                                <span class="close1">&times;</span>
+                                <!-- this should have the image of the Listing!  -->
+                                <img src="./resources/videosAndImgs/StockChair.png" alt="">
+                            </div>
+                        </div>
+                    </tr>
+                  </table>
+                
+            </div>
+            
+        </div> <!-- end of product div -->
+
+        <div class="pro filter AllCategories" data-seller-id="000000" data-zipcode="35404" id="111111">
+            <table>
+                <!-- <tr>
+                    <th>Categories</th>
+                    
+                </tr>
+                <tr>
+                    <td id="idtemIdCell">12312321354132</td>
+                  
+                </tr> -->
+              </table>
+        </div> <!-- end of product div -->
+
+
+        
+    <!-- end of pro-container div  -->
+    </div> 
+    </section>
+  <footer>
+    <ul>
+        <li><a href="SellerMain.html">Home</a></li>
+        <li><a id="about-link" href="about.html">About</a></li>
+        <li><a id="contact-link" href="contact.html">Contact</a></li>
+        <li><a href="Manage.html">Manage</a></li>
+        <li><a href="SignIn.html">Logout</a></li>   
+    </ul>
+  </footer>
+ 
+
+  <script src="./resources/scripts/BuyerMain.js"></script>
+  <script src="./resources/scripts/AdminView.js"></script>
+
+</body>
+</html>

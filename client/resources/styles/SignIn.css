@@ -1,0 +1,89 @@
+/* ^ video styling*/
+#myVideo {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+/* ^ login box styling */
+
+.column {
+    float: left;
+    width: 33%;
+}
+    
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.blockbox {
+   color: rgb(55, 55, 55);
+    margin: 10px;
+    margin-top: 80px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: white;
+    opacity: 90%;
+
+    width: 35vh;
+    height: 60vh;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    border-radius: 5px;
+} 
+
+.blockbox h1{
+    margin: 40px auto;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.button-container {
+    margin: 10px;
+    margin-top: 5px;
+    width: 100%;
+    text-align: center;
+    height: 50%;
+    
+}
+
+.button-container a {
+    display: block;
+    margin: 20px auto; 
+    
+    width: 150px; 
+    height: 40px;
+    font-size: 16px;
+    background-color: brown ;
+    color: white;
+    border: none;
+    text-decoration: none;
+    line-height: 40px; 
+    transition: 0.2s, color 0.2s;
+}
+
+.button-container a:hover {
+    background-color: rgb(115, 31, 31);
+    color: white;
+    
+}
+
+.button-container button {
+    display: block;
+    margin: 20px auto; 
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+#bottomH1 {
+    font-size: 30px;
+    margin-top: 30px;
+}

@@ -7,11 +7,7 @@ namespace api.Models
         public string SellerUsername { get; set; }
         public string SellerPassword { get; set; }
         public string SellerLocation { get; set; }
-        public bool Admin { get; set; } = false;
+        public bool SellerAdmin { get; set; } = false;
 
-        public override string ToString()
-        {
-            return $"{{\"SellerID\":\"{SellerID}\",\"SellerEmail\":\"{SellerEmail}\",\"SellerUsername\":\"{SellerUsername}\",\"SellerPassword\":\"{SellerPassword}\",\"SellerLocation\":\"{SellerLocation}\"}}";
-        }
     }
 }

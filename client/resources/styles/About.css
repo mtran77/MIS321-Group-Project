@@ -1,0 +1,42 @@
+.content {
+    display: flex;
+    justify-content: center; /* horizontally center the content */
+    align-items: center; /* vertically center the content */
+    height: 100%;
+  }
+  
+  .about-section {
+    padding: 25px;
+    text-align: center;
+ 
+   
+    display: flex; /* use flexbox layout for the columns */
+    justify-content: space-between; /* space the columns evenly */
+    width: 80%; /* adjust as needed */
+  }
+
+  .headerSections {
+    color: brown;
+  }
+  
+  .column {
+    flex: 1; /* make both columns take up equal space */
+  }
+  
+  .image{
+    
+    max-width: 75%; /* ensure the image doesn't overflow its container */
+    height: auto; /* maintain aspect ratio */
+    border-radius: 5px;
+  }
+
+.missionSection {
+    font-size: 20px;
+    text-align: left; /* align text to the left */
+    margin: 0 auto; /* horizontally center the content within the column */
+    max-width: 80%; /* adjust as needed */
+}
+
+.OtherSection {
+    margin-top: 120px;
+}

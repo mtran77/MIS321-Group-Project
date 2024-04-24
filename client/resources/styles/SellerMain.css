@@ -1,0 +1,87 @@
+.floating-button{
+  width: 60px;
+  height: 60px;
+  background-color: brown;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 2px;
+  border: none;
+  color: white;
+
+  font-size: 35px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .25);
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  }
+
+.floating-button:hover {
+
+  cursor: pointer;
+  background-color: rgb(115, 31, 31);
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .25);
+  z-index: 9;
+}
+
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+.form-container h1 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.form-container input, .form-container select {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 13px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input{
+  width: 90%;
+}
+
+#myFile {
+  background-color: none;
+}
+
+.form-container .btn {
+  background-color: brown;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+}
+  
+.form-container .cancel {
+  background-color: lightgrey;
+}
+  
+
+.form-container .btn:hover{
+  background-color: rgb(115, 31, 31);
+}
+
+.form-container .cancel:hover {
+  background-color: rgb(163, 163, 163);
+  color: #333;
+}
+
