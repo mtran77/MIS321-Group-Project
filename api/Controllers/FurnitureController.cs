@@ -43,9 +43,9 @@ namespace api.Controllers
 
         // PUT: api/Furniture/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Furniture furniture)
         {
-            
+            UpdateFurniture.UpdateFurnitureItem(id, furniture);
         }
 
         // DELETE: api/Furniture/5
