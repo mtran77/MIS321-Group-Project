@@ -9,7 +9,7 @@ function closeEditingForm() {
 async function SaveListingEdits() {
     try {
         const id = document.getElementById("currentListingId").value;
-        const listingName = document.getElementById("ListingName").value;
+        const name = document.getElementById("ListingName").value;
         const price = document.getElementById("Price").value;
         const condition = document.getElementById("listingCondition").value;
         const category = document.getElementById("listingCategory").value;
@@ -17,11 +17,12 @@ async function SaveListingEdits() {
         const imageUrl = document.getElementById("imageUrl").value;
 
         const editedListing = {
-            listingName,
             price,
-            condition,
             category,
-            description,
+            deleted,
+            image,
+            sellerId,
+            name,
             imageUrl
         };
 
