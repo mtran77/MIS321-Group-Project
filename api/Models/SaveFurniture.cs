@@ -1,5 +1,6 @@
 using api.Data;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Cms;
 
 namespace api.Models
 {
@@ -19,12 +20,12 @@ namespace api.Models
 
             cmd.Parameters.AddWithValue("@ItemPrice", myFurniture.ItemPrice);
             cmd.Parameters.AddWithValue("@ItemCategory", myFurniture.ItemCategory);
-            cmd.Parameters.AddWithValue("@deleted", myFurniture.Deleted);
+            cmd.Parameters.AddWithValue("@Deleted", myFurniture.Deleted);
             cmd.Parameters.AddWithValue("@FurnitureImage", myFurniture.FurnitureImage);
             cmd.Parameters.AddWithValue("@SellerID", myFurniture.SellerID);
             cmd.Parameters.AddWithValue("@ItemName", myFurniture.ItemName);
             cmd.Parameters.AddWithValue("@ItemCondition", myFurniture.ItemCondition);
-            cmd.Parameters.AddWithValue("@ItemDescription", myFurniture.SellerLocation);
+            cmd.Parameters.AddWithValue("@ItemDescription", myFurniture.ItemDescription);
 
             cmd.Prepare();
             

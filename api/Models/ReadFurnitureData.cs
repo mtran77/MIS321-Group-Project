@@ -48,37 +48,37 @@ namespace api.Models
             return allFurniture;
         }
 
-public string GetSellerLocation(int furnitureID)
-{
-    ConnectionString myConnection = new ConnectionString();
-    string cs = myConnection.Cs;
-
-    string location = string.Empty;
-
-    using (var con = new MySqlConnection(cs))
-    {
-        con.Open();
-        string query = @"
-            SELECT Seller.SellerLocation
-            FROM Furniture
-            JOIN Seller ON Furniture.SellerID = Seller.SellerID
-            WHERE Furniture.ItemID = @ItemID;";
-
-        using (var cmd = new MySqlCommand(query, con))
+        public string GetSellerLocation(int furnitureID)
         {
-            cmd.Parameters.AddWithValue("@ItemID", furnitureID); // Make sure the variable name matches the method parameter
+            ConnectionString myConnection = new ConnectionString();
+            string cs = myConnection.Cs;
 
-            using (var reader = cmd.ExecuteReader())
+            string location = string.Empty;
+
+            using (var con = new MySqlConnection(cs))
             {
-                if (reader.Read())
+                con.Open();
+                string query = @"
+                    SELECT Seller.SellerLocation
+                    FROM Furniture
+                    JOIN Seller ON Furniture.SellerID = Seller.SellerID
+                    WHERE Furniture.ItemID = @ItemID;";
+
+                using (var cmd = new MySqlCommand(query, con))
                 {
-                    location = reader["SellerLocation"] as string;
+                    cmd.Parameters.AddWithValue("@ItemID", furnitureID); // Make sure the variable name matches the method parameter
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            location = reader["SellerLocation"] as string;
+                        }
+                    }
                 }
             }
-        }
-    }
 
-    return location;
-}
+            return location;
+        }
     }
 }
