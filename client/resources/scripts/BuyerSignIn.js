@@ -1,19 +1,23 @@
-function GetZipcode (){
-    // gives the code the zipcode that will sort and only display listings with 
-    // matching zipcode to the buyer
-    var zipcode = document.getElementById("buyerZipcode").value;
+async function GetZipcode() {
+    try {
+        var buyerZipcode = document.getElementById("buyerZipcode").value;
 
-    fetch(`/api/listings/${zipcode}`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('No Network Response'); //Error handling in console
+        const response = await fetch(`/api/listings`);
+        if (!response.ok) {
+            throw new Error('No repsonse'); // Error handling for network response
+        }
+        const listingsData = await response.json();
+
+        const filteredListings = [];
+        listingsData.forEach(listing => {
+            if (listing.zipcode === buyerZipcode) {
+                filteredListings.push(listing);
             }
-            return response.json();
-        })
-        .then(listingsData => {
-            console.log(listingsData); 
-        })
-        .catch(error => {
-            console.error('Fetch operation error:', error); //More error handling in console
         });
+
+        console.log(filteredListings);
+    } 
+    catch (error) {
+        console.error('Error fetchig', error); // Error handling for fetch operation
+    }
 }
