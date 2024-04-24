@@ -12,7 +12,6 @@ function DisplayDescription() {
         span.onclick = function() {
         modal.style.display = "none";
         }
-    
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
@@ -29,7 +28,6 @@ function DisplayImage() {
     //should get the description id + listing id / whatever identifies listing that was passed in from the parameter
     var modal = document.getElementById("imageModal 000000");
     var span = document.getElementsByClassName("close1")[0];
-
   
     if (modal && span) {
         modal.style.display = "block";
