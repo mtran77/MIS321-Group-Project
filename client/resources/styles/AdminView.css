@@ -75,20 +75,6 @@ table button:hover {
     width: 40%;
   }
 
-.close, .close1 {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus, .close1:hover, .close1:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 /* for allCategories */
 #product1 .pro {
     border: none;
