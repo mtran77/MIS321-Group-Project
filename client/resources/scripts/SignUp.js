@@ -10,7 +10,7 @@ function CreateAccount (){
             if (existingAccount) {
                 alert("Account already exists. Please sign in.");
             } else {
-                const response = await fetch('api/Accounts/CreateAccount', {
+                const response = await fetch('api/Accounts', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

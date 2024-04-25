@@ -14,14 +14,20 @@ async function AddNewListing() {
       const category = document.getElementById("listingCategory").value;
       const description = document.getElementById("Description").value;
       const imageUrl = document.getElementById("imageUrl").value;
+      const deleted = false;
+      const id = 0;
 
       const listing = {
-          listingName,
-          price,
-          condition,
-          category,
-          description,
-          imageUrl
+        id,
+        price,
+        category,
+        deleted,
+        imageUrl,
+        sellerId,
+        itemName,
+        sellerLocation,
+        condition,
+        description
       };
 
       const response = await fetch('api/Furniture', {

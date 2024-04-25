@@ -4,7 +4,7 @@ async function GetZipcode() {
 
         const response = await fetch(`/api/Furniture`);
         if (!response.ok) {
-            throw new Error('No repsonse'); // Error handling for network response
+            throw new Error('No response'); // Error handling for network response
         }
 
         const listingsData = await response.json();
@@ -19,6 +19,6 @@ async function GetZipcode() {
         console.log(filteredListings);
     } 
     catch (error) {
-        console.error('Error fetchig', error); // Error handling for fetch operation
+        console.error('Error fetching', error); // Error handling for fetch operation
     }
 }

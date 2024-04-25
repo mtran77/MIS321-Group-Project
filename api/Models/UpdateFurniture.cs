@@ -5,7 +5,6 @@ namespace api.Models
 {
     public class UpdateFurniture
     {
-
             public static void DeleteListing(int id){
             ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.Cs;

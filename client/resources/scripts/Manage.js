@@ -8,22 +8,26 @@ function closeEditingForm() {
 
 async function SaveListingEdits() {
     try {
-        const id = document.getElementById("currentListingId").value;
-        const name = document.getElementById("ListingName").value;
-        const price = document.getElementById("Price").value;
-        const condition = document.getElementById("listingCondition").value;
-        const category = document.getElementById("listingCategory").value;
-        const description = document.getElementById("Description").value;
-        const imageUrl = document.getElementById("imageUrl").value;
+        const id = document.getElementById("ItemID").value;
+        const name = document.getElementById("ItemName").value;
+        const price = document.getElementById("itemPrice").value;
+        const condition = document.getElementById("itemCondition").value;
+        const category = document.getElementById("itemCategory").value;
+        const description = document.getElementById("itemDescription").value;
+        const imageUrl = document.getElementById("furnitureImage").value;
+        const deleted = false
 
         const editedListing = {
+            id,
             price,
             category,
             deleted,
-            image,
+            imageUrl,
             sellerId,
-            name,
-            imageUrl
+            itemName,
+            sellerLocation,
+            condition,
+            description
         };
 
         const response = await fetch(`api/Furniture/${id}`, {
