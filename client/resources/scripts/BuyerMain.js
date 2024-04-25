@@ -1,3 +1,5 @@
+let url = "http://localhost:5261/api/Furniture";
+
 // ^ functions for top navBar
 function setActive(){
 //   reference link: https://www.w3schools.com/howto/howto_js_active_element.asp
@@ -50,6 +52,69 @@ function RemoveClass(element, name) {
     }
   }
   element.className = arr1.join(" ");
+}
+
+async function GetZipcode() {
+  try {
+      var buyerZipcode = document.getElementById("buyerZipcode").value;
+
+      const response = await fetch(url);
+
+      if (!response.ok) {
+          throw new Error('No response'); // Error handling for network response
+      }
+
+      const listingsData = await response.json();
+
+      const filteredListings = [];
+      listingsData.forEach(listing => {
+          if (listing.sellerLocation === buyerZipcode) {
+              filteredListings.push(listing);
+          }
+      });
+
+      populateListings(filteredListings); // Call a function to populate listings
+  } 
+  catch (error) {
+      console.error('Error fetching', error); // Error handling for fetch operation
+  }
+}
+
+function populateListings(listings) {
+  const container = document.querySelector('.pro-container');
+
+  container.innerHTML = '';
+
+  listings.forEach(listing => {
+      const listingElement = document.createElement('div');
+      listingElement.classList.add('pro', 'filter', listing.category.toLowerCase());
+      listingElement.setAttribute('data-seller-id', listing.sellerId);
+      listingElement.setAttribute('data-zipcode', listing.sellerLocation);
+      listingElement.setAttribute('id', listing.itemId);
+
+      listingElement.innerHTML = `
+          <img src="${listing.imageUrl}" alt="${listing.name}">
+          <div class="description">
+              <span>${listing.seller}</span>
+              <h5>${listing.name}</h5>
+              <div>
+                  <p>${listing.condition}</p>
+              </div>
+              <h4>$${listing.price}</h4>
+          </div>
+          <div class="hidden" onclick="BuyItemPage()">
+              <div class="itemInfo">
+                  <h2>Location: </h2>
+                  <h2 class="location">${listing.sellerLocation}</h2>
+                  <h2>Description: </h2>
+                  <h2 class="description">${listing.description}</h2>
+                  <h2>Contact: </h2>
+                  <h2 class="user">${listing.sellerEmail}</h2>
+              </div>
+          </div>
+      `;
+      container.appendChild(listingElement);
+  });
 }
 
 function searchZip (){
