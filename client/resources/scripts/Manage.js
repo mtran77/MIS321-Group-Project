@@ -8,26 +8,27 @@ function closeEditingForm() {
 
 async function SaveListingEdits() {
     try {
-        const id = document.getElementById("ItemID").value;
-        const name = document.getElementById("ItemName").value;
-        const price = document.getElementById("itemPrice").value;
-        const condition = document.getElementById("itemCondition").value;
-        const category = document.getElementById("itemCategory").value;
-        const description = document.getElementById("itemDescription").value;
-        const imageUrl = document.getElementById("furnitureImage").value;
-        const deleted = false
-
-        const editedListing = {
-            id,
-            price,
-            category,
-            deleted,
-            imageUrl,
-            sellerId,
-            itemName,
-            sellerLocation,
-            condition,
-            description
+        const name = document.getElementById("name").value;
+        const price = document.getElementById("price").value;
+        const condition = document.getElementById("condition").value;
+        const category = document.getElementById("category").value;
+        const description = document.getElementById("description").value;
+        const imageUrl = document.getElementById("imageUrl").value;
+        const deleted = false;
+        const id = 100;
+        const sellerID = localStorage.getItem('SellerID')
+  
+        const listing = {
+          itemID: id,
+          itemPrice: price,
+          itemCategory: category,
+          deleted: deleted,
+          furnitureImage: imageUrl,
+          sellerID: sellerID,
+          itemName: name,
+          sellerLocation: "string",
+          itemCondition: condition,
+          itemDescription: description
         };
 
         const response = await fetch(`api/Furniture/${id}`, {

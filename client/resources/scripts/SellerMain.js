@@ -7,30 +7,33 @@ function closeForm() {
 }
 
 async function AddNewListing() {
+  event.preventDefault();
   try {
-      const listingName = document.getElementById("ListingName").value;
-      const price = document.getElementById("Price").value;
-      const condition = document.getElementById("listingCondition").value;
-      const category = document.getElementById("listingCategory").value;
-      const description = document.getElementById("Description").value;
+      const name = document.getElementById("name").value;
+      const price = document.getElementById("price").value;
+      const condition = document.getElementById("condition").value;
+      const category = document.getElementById("category").value;
+      const description = document.getElementById("description").value;
       const imageUrl = document.getElementById("imageUrl").value;
       const deleted = false;
-      const id = 0;
+      const id = 100;
+      const sellerID = localStorage.getItem('SellerID')
 
       const listing = {
-        id,
-        price,
-        category,
-        deleted,
-        imageUrl,
-        sellerId,
-        itemName,
-        sellerLocation,
-        condition,
-        description
+        itemID: id,
+        itemPrice: price,
+        itemCategory: category,
+        deleted: deleted,
+        furnitureImage: imageUrl,
+        sellerID: sellerID,
+        itemName: name,
+        sellerLocation: "string",
+        itemCondition: condition,
+        itemDescription: description
       };
+      console.log(listing);
 
-      const response = await fetch('api/Furniture', {
+      const response = await fetch('http://localhost:5261/api/Furniture', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'

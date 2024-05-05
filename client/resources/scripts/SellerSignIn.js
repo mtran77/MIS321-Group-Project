@@ -1,53 +1,37 @@
-function SubmitLoginRequest() {
+async function SubmitLoginRequest() {
     // check to see if the account has been created 
     // and if the credientals is incorrect 
     // if credientals are incorrect need to display to user somehow 
 
     // once the credientals are correct then you need to manually change the 
     // 
-    var username = document.getElementsByName("username")[0].value;
-    var password = document.getElementsByName("password")[0].value;
-    
+    // var username = ;
+    // var password = ;
+
     var data = 
     {
-        username: username,
-        password: password
+        username: document.getElementById("username").value,
+        password: document.getElementById("password").value
     };
 
-    fetch('/api/Accounts', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => 
-    {
-        if (!response.ok) 
-        {
-            throw new Error('Bad network response');
-        }
-        return response.json();
-    })
-    .then(accountData => 
-    {
-        if (accountData.isAdmin) 
-        {
-            window.location.href = "adminMain.html"; 
+    var username = data.username;
+    var password = data.password;
+    console.log(username);
+    console.log(password);
+    var url = "http://localhost:5261/api/Accounts/" + username + "/" + password
+    const response = await fetch(url);
 
-            window.location.href = "sellerMain.html"; 
-            WelcomeUsername(username);
-        }
-    })
-    .catch(error => 
-    {
-        console.error('Error:', error);
-        alert("Check console for error");
-    });
-
-    function WelcomeUsername(username) 
-    {
-        document.getElementById("WelcomeUser").textContent = "Welcome back, " + username;
+    if (!response.ok) {
+        throw new Error('No response'); // Error handling for network response
     }
-     window.location.href = "SellerMain.html"; 
+
+    const account = await response.json();
+    console.log(account)
+    localStorage.setItem("SellerID", account.sellerID)
+
+
+
+    // document.getElementById("WelcomeUser").textContent = "Welcome back, " + username;
+    
+    window.location.href = "SellerMain.html"; 
 }

@@ -16,7 +16,9 @@ function setActive(){
 
 // ^ functions for category navBar
 // filtering divs: reference https://www.w3schools.com/howto/howto_js_filter_elements.asp
-filterSelection("all")
+document.addEventListener("DOMContentLoaded", function(){
+  filterSelection("all")
+});
 
 function filterSelection(c) {
   var x, i;
@@ -65,6 +67,7 @@ async function GetZipcode() {
       }
 
       const listingsData = await response.json();
+      console.log(listingsData);
 
       const filteredListings = [];
       listingsData.forEach(listing => {
@@ -72,8 +75,9 @@ async function GetZipcode() {
               filteredListings.push(listing);
           }
       });
-
+      console.log(filteredListings);
       populateListings(filteredListings); // Call a function to populate listings
+      filterSelection("all")
   } 
   catch (error) {
       console.error('Error fetching', error); // Error handling for fetch operation
@@ -82,38 +86,38 @@ async function GetZipcode() {
 
 function populateListings(listings) {
   const container = document.querySelector('.pro-container');
+  console.log(container);
 
   container.innerHTML = '';
 
   listings.forEach(listing => {
       const listingElement = document.createElement('div');
-      listingElement.classList.add('pro', 'filter', listing.category.toLowerCase());
-      listingElement.setAttribute('data-seller-id', listing.sellerId);
+      listingElement.classList.add('pro', 'filter', listing.itemCategory.toLowerCase());
+      listingElement.setAttribute('data-seller-id', listing.sellerID);
       listingElement.setAttribute('data-zipcode', listing.sellerLocation);
-      listingElement.setAttribute('id', listing.itemId);
+      listingElement.setAttribute('id', listing.itemID);
 
       listingElement.innerHTML = `
-          <img src="${listing.imageUrl}" alt="${listing.name}">
+          <img src="${listing.furnitureImage}" alt="${listing.itemName}">
           <div class="description">
-              <span>${listing.seller}</span>
-              <h5>${listing.name}</h5>
+              <span>${listing.itemName}</span>
+              <h5>${listing.itemName}</h5>
               <div>
-                  <p>${listing.condition}</p>
+                  <p>${listing.itemCondition}</p>
               </div>
-              <h4>$${listing.price}</h4>
+              <h4>$${listing.itemPrice}</h4>
           </div>
           <div class="hidden" onclick="BuyItemPage()">
               <div class="itemInfo">
                   <h2>Location: </h2>
                   <h2 class="location">${listing.sellerLocation}</h2>
                   <h2>Description: </h2>
-                  <h2 class="description">${listing.description}</h2>
-                  <h2>Contact: </h2>
-                  <h2 class="user">${listing.sellerEmail}</h2>
+                  <h2 class="description">${listing.itemDescription}</h2>
               </div>
           </div>
       `;
       container.appendChild(listingElement);
+      console.log(listingElement);
   });
 }
 
@@ -127,3 +131,6 @@ function searchZip (){
 function BuyItemPage () {
   window.location.href = "ContactSeller.html"; 
 }
+
+// <h2>Contact: </h2>
+// <h2 class="user">${listing.sellerLocation}</h2>

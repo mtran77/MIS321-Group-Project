@@ -24,7 +24,7 @@ namespace api.Models
             cmd.Parameters.AddWithValue("@SellerID", myFurniture.SellerID);
             cmd.Parameters.AddWithValue("@ItemName", myFurniture.ItemName);
             cmd.Parameters.AddWithValue("@ItemCondition", myFurniture.ItemCondition);
-            cmd.Parameters.AddWithValue("@ItemDescription", myFurniture.SellerLocation);
+            cmd.Parameters.AddWithValue("@ItemDescription", myFurniture.ItemDescription);
 
             cmd.Prepare();
             

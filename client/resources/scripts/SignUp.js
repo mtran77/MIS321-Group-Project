@@ -10,7 +10,7 @@ function CreateAccount (){
             if (existingAccount) {
                 alert("Account already exists. Please sign in.");
             } else {
-                const response = await fetch('api/Accounts', {
+                const response = await fetch('http://localhost:5261/api/Accounts', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ function CreateAccount (){
     
     async function checkExistingAccount(name) {
         try {
-            const response = await fetch(`api/Accounts?name=${name}`);
+            const response = await fetch(`http://localhost:5261/api/Accounts`);
             if (response.ok) {
                 const accounts = await response.json();
                 return accounts && accounts.length > 0;

@@ -17,7 +17,7 @@
       </div>
       <div class="header-right">
         <!-- USERNAME  -->
-        <a id="WelcomeUser">Welcome back, UserName</a> 
+        <a id="WelcomeUser">Welcome back</a> 
         <a href="SellerMain.html">Home</a>
         <a href="Manage.html">Manage</a>
         <a href="SignIn.html">Logout</a>
@@ -38,15 +38,15 @@
           <h1>New Listing</h1>
       
           <label for="ListingName"><b>Listing Name</b></label>
-          <input type="text" placeholder="Listing Name" name="LName" required>
+          <input type="text" placeholder="Listing Name" name="LName" id="name" required>
       
           <!-- location should be auto filled in from the user account  -->
 
           <label for="price"><b>Price</b></label>
-          <input type="text" placeholder="Enter Listing Price" name="price" required>
+          <input type="text" placeholder="Enter Listing Price" name="price" id="price" required>
 
           <label for="Condition"><b>Condition</b></label>
-            <br><select name="listingCondition" id="listingCondition">
+            <br><select name="listingCondition" id="condition">
               <option value="newCon">New</option>
               <option value="veryGoodCon">Very Good</option>
               <option value="goodCon">Good</option>
@@ -56,7 +56,7 @@
             </select><br>
           <label for="zip"><b>Category</b></label>
           
-          <br><select name="listingCategory" id="listingCategory">
+          <br><select name="listingCategory" id="category">
             <option value="all">All</option>
             <option value="living">Living</option>
             <option value="kitchen">Kitchen</option>
@@ -67,15 +67,15 @@
           </select><br>
           
           <label for="description"><b>Description</b></label>
-          <input type="text" placeholder="Enter Listing Description (1-100)" name="description" maxlength="100" required>
+          <input type="text" placeholder="Enter Listing Description (1-100)" name="description" id="description" maxlength="100" required>
           
           <label for="file" ><b>Upload Image URL</b></label>
-          <input type="text" id="imageUrl" name="imageUrl" placeholder="Enter image URL">  
+          <input type="text" id="imageUrl" name="imageUrl" id="imageUrl" placeholder="Enter image URL">  
 
           <!-- AddNewListing() is on SellerMain.js -->
-          <button type="submit" class="btn" onclick="AddNewListing()">Create Listing</button>
           <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
+        <button type="button" class="btn" onclick="AddNewListing()">Create Listing</button>
       </div>
   </div>
       

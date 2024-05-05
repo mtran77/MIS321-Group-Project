@@ -36,6 +36,20 @@ namespace api.Controllers
             // return readObject.GetAccount(id);
         }
 
+        [HttpGet("{username}/{password}", Name = "GetAccountByUsernameAndPassword")]
+        public Account Get(string username, string password)
+        {
+            ReadAccountData readObject = new ReadAccountData();
+            List<Account> myAccounts =  readObject.GetAllAccounts();
+            foreach(Account account in myAccounts){
+                if(account.SellerUsername == username && account.SellerPassword == password){
+                    return account;
+                }
+            } return new Account();
+            // ReadAccountData readObject = new ReadAccountData();
+            // return readObject.GetAccount(id);
+        }
+
         // POST: api/Account
         [HttpPost]
         public void Post([FromBody] Account account)
