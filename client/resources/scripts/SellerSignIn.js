@@ -16,8 +16,7 @@ async function SubmitLoginRequest() {
 
     var username = data.username;
     var password = data.password;
-    console.log(username);
-    console.log(password);
+
     var url = "http://localhost:5261/api/Accounts/" + username + "/" + password
     const response = await fetch(url);
 
@@ -27,11 +26,10 @@ async function SubmitLoginRequest() {
 
     const account = await response.json();
     console.log(account)
-    localStorage.setItem("SellerID", account.sellerID)
-
-
-
-    // document.getElementById("WelcomeUser").textContent = "Welcome back, " + username;
-    
-    window.location.href = "SellerMain.html"; 
+    if(account.sellerID === 0){
+        alert('No account found')
+    } else{
+        localStorage.setItem("SellerID", account.sellerID)  
+        window.location.href = "SellerMain.html"; 
+    }
 }

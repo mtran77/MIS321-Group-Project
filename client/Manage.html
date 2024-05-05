@@ -1,3 +1,4 @@
+User
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +39,7 @@
         <button onclick="openForm()" class="floating-button" title="Add New Listing">+</button>
     
         <div class="form-popup" id="NewListingForm">
+          <body onload="GetSellerListings()"></body>
           <form action="/action_page.php" class="form-container">
             <h1>New Listing</h1>
         
@@ -125,8 +127,6 @@
           <h2 class="location">12345</h2>
           <h2>Description: </h2>
           <h2 class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
-          <h2>Contact: </h2>
-          <h2 class="user">sName@crimson.ua.edu</h2>
         </div>
         <div class="SellerButtons">
             <!-- id for the button should be the seller ID or whatever we are using to  -->
@@ -136,6 +136,7 @@
         </div>
           
     </div>
+    <div id="modal-container"></div>
      <!-- edit listing window -->
      <!-- The placeholders for each input should be the current listing property  -->
      <div class="editingForm-popup" id="EditListingForm">
