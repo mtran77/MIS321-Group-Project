@@ -1,20 +1,68 @@
 let fetchUrl = 'http://localhost:5261/api/Furniture'
 
+async function DisplayTable(){
+    const response = await fetch(fetchUrl);
+
+    if (!response.ok) {
+        throw new Error('No response'); // Error handling for network response
+    }
+
+    let listings = [];
+
+    //testing 
+    console.log('test 1');
+
+    listings = await response.json();
+
+     //testing 
+     console.log(listings);
+
+    listings.forEach(listing => {
+        const row = document.createElement('tr');
+
+        row.innerHTML = `
+        <tr>
+        <td id="idtemIdCell">${listing.itemID}</td>
+        <td id="usernameCell">${listing.sellerID}</td>
+        <td id="locationCell">${listing.sellerID}</td>
+        <td id="listingNameCell">${listing.itemName}</td>
+        <td id="categoryCell">${listing.itemCategory}</td>
+        <td id="conditionCell">${listing.itemCondition}</td>
+        <td id="priceCell">$${listing.itemPrice}</td>
+        <td class="hoverInformation" id="descriptionModal ${listing.itemID}" onclick="DisplayDescription(${listing.itemID})">Description</td>
+        <td class="hoverInformation" id="imageModal ${listing.itemID}" onclick="DisplayImage(${listing.itemID})">Image</td>
+        <td><button class="deleteBtn">Delete</button></td> 
+        
+        <div id="descriptionModal  ${listing.itemID}" class="modal">
+            <div class="modal-content">
+                
+                <p id="descriptionCell">${listing.itemDescription}</p>
+            </div>
+        </div>
+
+        <div id="imageModal  ${listing.itemID}" class="modal">                   
+            <div class="modal-content">
+       
+                <img src="${listing.furnitureImage}" alt="">
+            </div>
+        </div>
+    </tr>
+        `
+        document.querySelector('.DisplayAllListings table').appendChild(row);
+    });
+}
+
 //should pass the listing id 
-function DisplayDescription() {
+function DisplayImage(listingID) {
     // getElementByID(descriptionModel 000000) 
     //should get the description id + listing id / whatever identifies listing that was passed in from the parameter
-    var modal = document.getElementById("descriptionModal 000000");
-    var span = document.getElementsByClassName("close")[0];
+    var modal = document.getElementById(`imageModal  ${listingID}`);
+    var span = document.getElementsByClassName(`close ${listingID}`);
 
-    if (modal && span) {
+  
+    if (modal) {
         modal.style.display = "block";
 
-        //closes modal
-        span.onclick = function() {
-        modal.style.display = "none";
-        }
-    
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
@@ -25,66 +73,14 @@ function DisplayDescription() {
     }
 }
 
-async function DisplayTable(){
-    const response = await fetch(fetchUrl);
-
-    if (!response.ok) {
-        throw new Error('No response'); // Error handling for network response
-    }
-
-    let listings = [];
-
-    listings = await response.json();
-
-    listings.forEach(listing => {
-        const listingElement = document.createElement('div');
-
-        listingElement.innerHTML = `
-        <tr>
-        <td id="idtemIdCell">${listing.itemID}</td>
-        <td id="usernameCell">${listing.sellerID}</td>
-        <td id="locationCell">${listing.sellerID}</td>
-        <td id="listingNameCell">${listing.itemName}</td>
-        <td id="categoryCell">${listing.itemCategory}</td>
-        <td id="conditionCell">${listing.itemCondtion}</td>
-        <td id="priceCell">$${listing.itemPrice}</td>
-        <td class="hoverInformation" id="descriptionCell" onclick="DisplayDescription()">Description</td>
-        <td class="hoverInformation" id="imageCell" onclick="DisplayImage()">Image</td>
-        <td><button class="deleteBtn">Delete</button></td> 
-        <!-- for description -->
-        <div id="descriptionModal 000000" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <!-- this should have the description of the Listing!  -->
-                <p id="descriptionCell">${listing.itemDescripton}</p>
-            </div>
-        </div>
-
-        <div id="imageModal 000000" class="modal">                   
-            <div class="modal-content">
-                <span class="close1">&times;</span>
-                <img src="${listing.furnitureImage}" alt="">
-            </div>
-        </div>
-    </tr>
-        `
-    });
-}
-
 //should pass the listing id 
-function DisplayImage() {
+function DisplayDescription(listingID) {
     // getElementByID(descriptionModel 000000) 
     //should get the description id + listing id / whatever identifies listing that was passed in from the parameter
-    var modal = document.getElementById("imageModal 000000");
-    var span = document.getElementsByClassName("close1")[0];
-
-  
-    if (modal && span) {
+    var modal = document.getElementById(`descriptionModal  ${listingID}`);
+      
+    if (modal ) {
         modal.style.display = "block";
-
-        span.onclick = function() {
-        modal.style.display = "none";
-        }
 
         window.onclick = function(event) {
             if (event.target == modal) {

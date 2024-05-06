@@ -41,6 +41,7 @@ async function GetSellerListings() {
   function populateListingsManage(listings) {
     const container = document.querySelector('.pro-container');
     console.log(container);
+
   
     container.innerHTML = '';
   
@@ -73,6 +74,60 @@ async function GetSellerListings() {
                 <button class="DeleteListing" id="delete${listing.itemID}">Delete</button>
               </div>
             </div>
+
+            <div class="editingForm-popup" id="EditListingForm">
+            <form action="/action_page.php" class="editingForm-container">
+              <h1 class="editH1">Edit Listing</h1>
+              <div class="row">
+                <div class="column" >
+                  <!-- this image uses the current listing that is being edited's picture -->
+                  <label for="CurrentImage"><b>Current Image</b></label>
+                  <img id="currentListingImg" src="${listing.furnitureImage}" alt="image of furniture">
+                  
+                </div>
+                <div class="column" >
+                  <form action="/action_page.php" class="form-container">
+                    
+                    <label for="ListingName"><b>Listing Name</b></label>
+                    <input type="text" placeholder="current ${listing.itemName}" name="LName" required>
+          
+                    <label for="price"><b>Price</b></label>
+                    <input type="text" placeholder="current ${listing.itemPrice}" name="price" required>
+          
+                    <label for="Condition"><b>Condition</b></label>
+                      <br><select name="listingCondition" id="listingCondition">
+                        <option value="newCon">New</option>
+                        <option value="veryGoodCon">Very Good</option>
+                        <option value="goodCon">Good</option>
+                        <option value="usedCon">Used</option>
+                        <option value="acceptableCon">Acceptable</option>
+                        <option value="damagedCon">Damaged</option>
+                      </select><br>
+      
+                    <label for="zip"><b>Category</b></label>
+                    <br><select name="listingCategory" id="listingCategory">
+                      <option value="living">Living</option>
+                      <option value="kitchen">Kitchen</option>
+                      <option value="office">Office</option>
+                      <option value="bedroom">Bedroom</option>
+                      <option value="bathroom">Bathroom</option>
+                      <option value="outdoors">Outdoors</option>
+                    </select><br>
+                    
+                    <label for="description"><b>Description</b></label>
+                    <input type="text" placeholder="Change Current Description? (1-100)" name="description" maxlength="100" required>
+                    
+                    <label for="file" ><b>Upload Image URL</b></label>
+                    <input type="text" id="imageUrl" name="imageUrl" placeholder="${listing.furnitureImage}">  
+                    
+                    <button type="submit" class="btn" onclick="SaveListingEdits()">Edit Listing</button>
+                    <button type="button" class="btn cancel" onclick="closeEditingForm()">Cancel Edits</button>
+                  </form>
+              </div>
+              
+              
+            </form>
+          </div>
         `;
         container.appendChild(listingElement);
         console.log(listingElement);
@@ -91,7 +146,7 @@ async function SaveListingEdits() {
         const id = 100;
         const sellerID = localStorage.getItem('SellerID')
   
-        const listing = {
+        const editedListing = {
           itemID: id,
           itemPrice: price,
           itemCategory: category,
@@ -99,7 +154,6 @@ async function SaveListingEdits() {
           furnitureImage: imageUrl,
           sellerID: sellerID,
           itemName: name,
-          sellerLocation: "string",
           itemCondition: condition,
           itemDescription: description
         };
