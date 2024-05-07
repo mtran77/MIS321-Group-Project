@@ -24,7 +24,7 @@ async function DisplayTable(){
         <tr>
         <td id="idtemIdCell">${listing.itemID}</td>
         <td id="usernameCell">${listing.sellerID}</td>
-        <td id="locationCell">${listing.sellerID}</td>
+        <td id="locationCell">${listing.sellerLocation}</td>
         <td id="listingNameCell">${listing.itemName}</td>
         <td id="categoryCell">${listing.itemCategory}</td>
         <td id="conditionCell">${listing.itemCondition}</td>
