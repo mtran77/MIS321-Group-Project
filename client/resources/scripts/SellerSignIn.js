@@ -3,11 +3,6 @@ async function SubmitLoginRequest() {
     // and if the credientals is incorrect 
     // if credientals are incorrect need to display to user somehow 
 
-    // once the credientals are correct then you need to manually change the 
-    // 
-    // var username = ;
-    // var password = ;
-
     var data = 
     {
         username: document.getElementById("username").value,

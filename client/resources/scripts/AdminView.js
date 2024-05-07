@@ -18,37 +18,41 @@ async function DisplayTable(){
      console.log(listings);
 
     listings.forEach(listing => {
-        const row = document.createElement('tr');
 
-        row.innerHTML = `
-        <tr>
-        <td id="idtemIdCell">${listing.itemID}</td>
-        <td id="usernameCell">${listing.sellerID}</td>
-        <td id="locationCell">${listing.sellerLocation}</td>
-        <td id="listingNameCell">${listing.itemName}</td>
-        <td id="categoryCell">${listing.itemCategory}</td>
-        <td id="conditionCell">${listing.itemCondition}</td>
-        <td id="priceCell">$${listing.itemPrice}</td>
-        <td class="hoverInformation" id="descriptionModal ${listing.itemID}" onclick="DisplayDescription(${listing.itemID})">Description</td>
-        <td class="hoverInformation" id="imageModal ${listing.itemID}" onclick="DisplayImage(${listing.itemID})">Image</td>
-        <td><button class="deleteBtn">Delete</button></td> 
+        if (listing.deleted == false){
+            const row = document.createElement('tr');
+
+            row.innerHTML = `
+            <tr>
+            <td id="idtemIdCell">${listing.itemID}</td>
+            <td id="usernameCell">${listing.sellerID}</td>
+            <td id="locationCell">${listing.sellerLocation}</td>
+            <td id="listingNameCell">${listing.itemName}</td>
+            <td id="categoryCell">${listing.itemCategory}</td>
+            <td id="conditionCell">${listing.itemCondition}</td>
+            <td id="priceCell">$${listing.itemPrice}</td>
+            <td class="hoverInformation" id="descriptionModal ${listing.itemID}" onclick="DisplayDescription(${listing.itemID})">Description</td>
+            <td class="hoverInformation" id="imageModal ${listing.itemID}" onclick="DisplayImage(${listing.itemID})">Image</td>
+            <td><button class="deleteBtn" onclick="DeleteListing(${listing.itemID})">Delete</button></td>
+            
+            <div id="descriptionModal  ${listing.itemID}" class="modal">
+                <div class="modal-content">
+                    
+                    <p id="descriptionCell">${listing.itemDescription}</p>
+                </div>
+            </div>
+
+            <div id="imageModal  ${listing.itemID}" class="modal">                   
+                <div class="modal-content">
         
-        <div id="descriptionModal  ${listing.itemID}" class="modal">
-            <div class="modal-content">
-                
-                <p id="descriptionCell">${listing.itemDescription}</p>
+                    <img src="${listing.furnitureImage}" alt="">
+                </div>
             </div>
-        </div>
-
-        <div id="imageModal  ${listing.itemID}" class="modal">                   
-            <div class="modal-content">
-       
-                <img src="${listing.furnitureImage}" alt="">
-            </div>
-        </div>
-    </tr>
-        `
-        document.querySelector('.DisplayAllListings table').appendChild(row);
+        </tr>
+            `
+            document.querySelector('.DisplayAllListings table').appendChild(row);
+        }
+        
     });
 }
 
@@ -90,4 +94,29 @@ function DisplayDescription(listingID) {
     } else {
         console.error("Modal or close button element not found.");
     }
+}
+
+
+function DeleteListing(listingID) {
+    const deleteUrl = `http://localhost:5261/api/Furniture/${listingID}`;
+
+    fetch(deleteUrl, {
+        method: 'DELETE',
+        headers: {
+              'Content-Type': 'application/json'
+          }
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("Deleted listing successfully.");
+        } else {
+            alert("Deleted listing failed.");
+        }
+        
+        window.location.reload();
+    })
+    .catch(error => {
+        console.error('Error deleting listing:', error);
+        
+    });
 }

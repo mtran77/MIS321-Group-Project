@@ -142,14 +142,14 @@ async function SaveListingEdits(itemId) {
   let putUrl = 'http://localhost:5261/api/Furniture';
   try {
       const name = document.getElementById("name").value;
-      const price = document.getElementById("price").value;
+      const price = parseInt(document.getElementById("price").value);
       const condition = document.getElementById("listingCondition").value;
       const category = document.getElementById("listingCategory").value;
       const description = document.getElementById("description").value;
       const imageUrl = document.getElementById("imageUrl").value;
       const deleted = false;
       const id = itemId;
-      const sellerID = localStorage.getItem('SellerID')
+      const sellerID = parseInt(localStorage.getItem('SellerID'))
 
       const editedListing = {
         itemID: id,
@@ -162,7 +162,7 @@ async function SaveListingEdits(itemId) {
         itemCondition: condition,
         itemDescription: description
       };
-      console.log(editedListing)
+      console.log( 'before fetch')
 
       let response = await fetch(putUrl +'/'+ itemId, {
           method: 'PUT',
@@ -185,4 +185,5 @@ async function SaveListingEdits(itemId) {
       alert("An error occurred. Please try again later.");
   }
 }
+
 
